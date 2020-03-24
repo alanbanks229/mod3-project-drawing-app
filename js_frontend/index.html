@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+  <head>
+    <meta charset="utf-8" />
+    <title>Drawing Application</title>
+    <script type="text/javascript" src="src/index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <!-- document.getElementById("myDIV").style.display = "none"; -->
+  <!-- https://www.w3schools.com/jsref/prop_style_display.asp look here for display = value tips -->
+  <body>
+    <!-- About Container -->
+    <div id="about_container">
+      <h1>About Page</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <input class="login_button" type="button" value="Login">
+      <input class="sign_up_button" type="button" value="Sign Up">
+    </div>
+
+    <!-- Login Page Container -->
+    <div id="login_page_container">
+      <h2>Login</h2>
+      <form id="login_form">
+        <input type="text" id="login_username" name="username" placeholder="Enter Your Username">
+        <br>
+        <input type="text" id="login_password" name="password" placeholder="Enter Your Password">
+        <br>
+        <input type="submit" value="Login">
+      </form>
+      <input class="about_button" type="button" value="About">
+    </div>
+
+    <!-- New User Form -->
+    <div id="create_user_form_container">
+      <h1> Sign up </h1>
+      <form id="create_user_form">
+        <label for="username">Username: </label>
+        <input type="text" id="username_input" name="username" placeholder="input username here"><br>
+        <label for="password">Password: </label>
+        <input type="text" id="password_input" name="password" placeholder="input password here"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <!-- User's New Drawing Page only accessible if logged in-->
+    <div id="user_new_drawing_container">
+
+      <h1>New Drawing Page... delete this when done</h1>
+
+      <div class="side_nav_bar">
+        <input type="button" class="post_button" value="Posts">
+        <br>
+        <input type="button" class="user_drawings_button" value="Your Drawings">
+        <br>
+        <input type="button" class="logout_button" value="Logout">
+      </div>
+
+      <br>
+      <br>
+      <div class="overall_drawing_container">
+        <form id="create_new_drawing">
+          <label for="save">Save</label>
+          <input id="save" type="radio" name="user_choice" checked/>
+          <label for="publish">Publish</label>
+          <input id="publish" type="radio" name="user_choice"/>
+          <br>
+          <br>
+          <label for="title">Title: </label>
+          <input type="text" id="title_input" name="title" placeholder="input title for this drawing"><br>
+          <label for="description">Description: </label><br>
+          <textarea rows="3" cols="50" name="description" form="create_new_drawing" placeholder="Enter this drawing's description here"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+    </div>
+
+    <!--View the drawings on your profile page-->
+    <!-- CSS will be a little similar to above only for nav bar -->
+    <div id="user_drawings_show_page">
+      <h1 id="username_h1"></h1>
+      <div class="side_nav_bar">
+        <input type="button" class="post_button" value="View Published Drawings">
+        <br>
+        <input type="button" class="new_drawing_button" value="Create New Drawing">
+        <br>
+        <input type="button" class="logout_button" value="Logout">
+      </div>
+
+      <div class="all_drawings_container">
+        <!--Here you are suppose to set up a fetch call and create elements with js-->
+      </div>
+
+    </div>
+
+    <!--View all the published Drawings-->
+    <div id="all_users_published_drawings_container">
+      <h1>Page for displaying all published drawings </h1>
+      <div class="side_nav_bar">
+        <input type="button" class="new_drawing_button" value="Create New Drawing">
+        <br>
+        <input type="button" class="user_drawings_button" value="Your Drawings">
+        <br>
+        <input type="button" class="logout_button" value="Logout">
+      </div>
+
+    </div>
+
+  </body>
+</html>
