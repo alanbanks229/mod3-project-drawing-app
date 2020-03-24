@@ -13,11 +13,9 @@ class SessionsController < ApplicationController
       else 
         puts "NO BUENOOOOOOOO"
         render json: {
-          message: "Bad Request"
-          }, status: 404
+          message: "Invalid username and/or password", status: 220}
       end
 
-      #byebug
     end
       
     def destroy

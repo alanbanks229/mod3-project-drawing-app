@@ -11,6 +11,13 @@
   <!-- document.getElementById("myDIV").style.display = "none"; -->
   <!-- https://www.w3schools.com/jsref/prop_style_display.asp look here for display = value tips -->
   <body>
+    <!--This should be recreated when a user logs in i think -->
+    <div class="topnav">
+      <input class="about_button" type="button" value="About">
+      <input type="button" class="post_button" value="Published">
+      <input type="button" class="new_drawing_button" value="Create New Drawing">
+    </div>
+    <!--<main id="main"></main>-->
     <!-- About Container -->
     <div id="about_container">
       <h1>About Page</h1>
@@ -20,37 +27,38 @@
       <input class="login_button" type="button" value="Login">
       <input class="sign_up_button" type="button" value="Sign Up">
     </div>
-
+    
     <!-- Login Page Container -->
     <div id="login_page_container">
       <h2>Login</h2>
       <form id="login_form">
         <input type="text" id="login_username" name="username" placeholder="Enter Your Username">
         <br>
-        <input type="text" id="login_password" name="password" placeholder="Enter Your Password">
+        <input type="password" id="login_password" name="password" placeholder="Enter Your Password">
         <br>
         <input type="submit" value="Login">
       </form>
+      <br>
       <input class="about_button" type="button" value="About">
     </div>
-
+    
     <!-- New User Form -->
     <div id="create_user_form_container">
       <h1> Sign up </h1>
       <form id="create_user_form">
         <label for="username">Username: </label>
-        <input type="text" id="username_input" name="username" placeholder="input username here"><br>
+        <input type="text" id="login_username" name="username" placeholder="input username here"><br>
         <label for="password">Password: </label>
-        <input type="text" id="password_input" name="password" placeholder="input password here"><br>
+        <input type="text" id="login_password" name="password" placeholder="input password here"><br>
         <input type="submit" value="Submit">
       </form>
     </div>
-
+    
     <!-- User's New Drawing Page only accessible if logged in-->
     <div id="user_new_drawing_container">
-
-      <h1>New Drawing Page... delete this when done</h1>
-
+      
+      <h1 id="username_drawpage_h1">New Drawing Page... delete this when done</h1>
+      
       <div class="side_nav_bar">
         <input type="button" class="post_button" value="Posts">
         <br>
@@ -58,7 +66,7 @@
         <br>
         <input type="button" class="logout_button" value="Logout">
       </div>
-
+      
       <br>
       <br>
       <div class="overall_drawing_container">
@@ -68,6 +76,16 @@
           <label for="publish">Publish</label>
           <input id="publish" type="radio" name="user_choice"/>
           <br>
+          <canvas id="drawingCanvas"></canvas>
+          <main>
+            <section class="colors">
+              <input type="text" class="color-picker" value="#171717" />
+            </section>
+            <section class="thickness">
+              <input type="number" class="stroke-weight" value="3" />
+            </section>
+            <button class="clear">X</button>
+          </main>
           <br>
           <label for="title">Title: </label>
           <input type="text" id="title_input" name="title" placeholder="input title for this drawing"><br>
@@ -76,9 +94,9 @@
           <input type="submit" value="Submit">
         </form>
       </div>
-
+      
     </div>
-
+    
     <!--View the drawings on your profile page-->
     <!-- CSS will be a little similar to above only for nav bar -->
     <div id="user_drawings_show_page">
@@ -89,14 +107,21 @@
         <input type="button" class="new_drawing_button" value="Create New Drawing">
         <br>
         <input type="button" class="logout_button" value="Logout">
+        <br>
+        <input type="button" class="remove_thy_self" value="Delete Your Account">
       </div>
-
-      <div class="all_drawings_container">
-        <!--Here you are suppose to set up a fetch call and create elements with js-->
+      <br>
+      <div class="all_user_drawings">
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        <img class="mySlides" src="https://img.pngio.com/sanic-sticker-transparent-sanic-png-png-download-1024x1024-sanicpng-840_880.png">
+        <img class="mySlides" src="https://pngimg.com/uploads/mario/mario_PNG64.png">
+        <img class="mySlides" src="https://www.itl.cat/pngfile/big/0-3983_galaxy-wallpaper-galaxy-background-16-9.jpg">
+        <!-- Here you are suppose to set up a fetch call and create elements with js-->
       </div>
-
+      
     </div>
-
+    
     <!--View all the published Drawings-->
     <div id="all_users_published_drawings_container">
       <h1>Page for displaying all published drawings </h1>
@@ -107,8 +132,14 @@
         <br>
         <input type="button" class="logout_button" value="Logout">
       </div>
-
+      
+      <div class="all_published_drawings">
+        
+      </div>
+      
     </div>
-
-  </body>
+  <canvas class="background"></canvas>
+  <link rel="stylesheet" href="canvas.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+</body>
 </html>

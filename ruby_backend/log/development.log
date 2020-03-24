@@ -6448,3 +6448,1569 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 274ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 1395)
 
 
+Started GET "/users" for ::1 at 2020-03-23 22:23:42 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 70ms (Views: 0.7ms | ActiveRecord: 14.6ms | Allocations: 29705)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 22:24:04 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 283ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1805)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:38:55 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing123", "password"=>"[FILTERED]", "user"=>{"username"=>"testing123"}}
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "testing123"], ["password_digest", "$2a$12$cjaKHqG1T9BgAgn6Jw3MAOtRN2KO9YIjUoWp4JJxC5b2OOhmiKGsW"], ["created_at", "2020-03-24 02:38:55.624105"], ["updated_at", "2020-03-24 02:38:55.624105"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 278ms (Views: 2.2ms | ActiveRecord: 4.9ms | Allocations: 8240)
+
+
+Started GET "/users" for ::1 at 2020-03-23 22:38:59 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 22703)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:48:56 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "user"=>{"username"=>"abanks229"}}
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 275ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 2592)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:50:19 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "user"=>{"username"=>"abanks229"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 270ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1394)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:50:53 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "user"=>{"username"=>"abanks229"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 266ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1415)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:56:06 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "user"=>{"username"=>"abanks229"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 269ms (Views: 0.5ms | ActiveRecord: 7.1ms | Allocations: 4453)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:56:29 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "user"=>{"username"=>"abanks229"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 267ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:56:40 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 273ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1398)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:56:46 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Andrew", "password"=>"[FILTERED]", "user"=>{"username"=>"Andrew"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Andrew"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 271ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1398)
+
+
+Started POST "/users" for ::1 at 2020-03-23 22:57:14 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testingBruh", "password"=>"[FILTERED]", "user"=>{"username"=>"testingBruh"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testingBruh"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testingBruh"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "testingBruh"], ["password_digest", "$2a$12$eF7zqbJxuJpgTzAndhh5KOa0vvS8itSAnzgbQLtOhJnSUAHYP5ULC"], ["created_at", "2020-03-24 02:57:14.496599"], ["updated_at", "2020-03-24 02:57:14.496599"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 277ms (Views: 2.1ms | ActiveRecord: 6.4ms | Allocations: 5024)
+
+
+Started GET "/users" for ::1 at 2020-03-23 23:00:17 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 52ms (Views: 0.3ms | ActiveRecord: 10.4ms | Allocations: 26268)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:00:42 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testingBruh", "password"=>"[FILTERED]", "user"=>{"username"=>"testingBruh"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testingBruh"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 275ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1396)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:00:57 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "user"=>{"username"=>"Bob Doe"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Bob Doe"], ["password_digest", "$2a$12$gLj52wwQfqk4D69m0Zrr4.MVEV/rrBKkesPtsW4TLwZhFDHrmMZgm"], ["created_at", "2020-03-24 03:00:57.268825"], ["updated_at", "2020-03-24 03:00:57.268825"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 271ms (Views: 1.3ms | ActiveRecord: 2.0ms | Allocations: 4581)
+
+
+Started GET "/users" for ::1 at 2020-03-23 23:01:08 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 16005)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:01:48 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Lord_help me", "password"=>"[FILTERED]", "user"=>{"username"=>"Lord_help me"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Lord_help me"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Lord_help me"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Lord_help me"], ["password_digest", "$2a$12$deTacv0cYfq/gQvT/Qo6hOF3OF2cdyUI7gJ25nD5vv2PW/LLDvuBi"], ["created_at", "2020-03-24 03:01:48.318286"], ["updated_at", "2020-03-24 03:01:48.318286"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 272ms (Views: 1.4ms | ActiveRecord: 2.1ms | Allocations: 4586)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:12:08 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 282ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1494)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:12:17 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 276ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:17:39 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 265ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1281)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:18:02 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"work_pls", "password"=>"[FILTERED]", "user"=>{"username"=>"work_pls"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "work_pls"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "work_pls"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "work_pls"], ["password_digest", "$2a$12$NkrbQMSQ9X8sLfVLT1efxucQXTqGErZLt/Ulo2OHpSCBoyekBGavy"], ["created_at", "2020-03-24 03:18:02.652302"], ["updated_at", "2020-03-24 03:18:02.652302"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 275ms (Views: 1.4ms | ActiveRecord: 3.6ms | Allocations: 4597)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:19:01 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"kappa123", "password"=>"[FILTERED]", "user"=>{"username"=>"kappa123"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "kappa123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "kappa123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "kappa123"], ["password_digest", "$2a$12$I3HP2XNcsOUSjsfIHn9UDeJodAhzTFywnFpJTDHVser28TYxsJN0K"], ["created_at", "2020-03-24 03:19:01.495007"], ["updated_at", "2020-03-24 03:19:01.495007"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 272ms (Views: 1.3ms | ActiveRecord: 2.8ms | Allocations: 4580)
+
+
+Started GET "/users" for ::1 at 2020-03-23 23:20:25 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 22]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 22]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 20959)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:20:38 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"brooo", "password"=>"[FILTERED]", "user"=>{"username"=>"brooo"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "brooo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "brooo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "brooo"], ["password_digest", "$2a$12$WzHUqLPZt/Fyjm1S9wEz3eyD5rhDEHicFXQ3OHXifIR0QOn7HNOTm"], ["created_at", "2020-03-24 03:20:38.840289"], ["updated_at", "2020-03-24 03:20:38.840289"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 288ms (Views: 1.4ms | ActiveRecord: 2.1ms | Allocations: 4584)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:20:38 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"brooo", "session"=>{"username"=>"brooo"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "brooo"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 269ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 737)
+
+
+Started GET "/users" for ::1 at 2020-03-23 23:21:31 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 14]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 15]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 16]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 19]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 21]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 22]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 22]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 23]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 24]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 24]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 4.0ms | Allocations: 22563)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:22:05 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 270ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1279)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:23:39 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Andrew", "password"=>"[FILTERED]", "session"=>{"username"=>"Andrew", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Andrew"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 273ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:23:53 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "session"=>{"username"=>"Bob Doe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 272ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:25:03 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"y", "password"=>"[FILTERED]", "user"=>{"username"=>"y"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "y"], ["password_digest", "$2a$12$jZqVmn46iu7Tb2E7R/eJ/ed4pq0GE/j2LeuqmV2wJWCFK8J4Rajn2"], ["created_at", "2020-03-24 03:25:04.239335"], ["updated_at", "2020-03-24 03:25:04.239335"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 272ms (Views: 1.3ms | ActiveRecord: 2.0ms | Allocations: 4581)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:25:59 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"y", "session"=>{"username"=>"y"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 271ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 737)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:30:10 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"y", "session"=>{"username"=>"y"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 271ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 741)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:30:20 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"y", "password"=>"[FILTERED]", "session"=>{"username"=>"y", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 272ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:32:39 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 270ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started POST "/users" for ::1 at 2020-03-23 23:33:06 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "user"=>{"username"=>"Bob Doe"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 278ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1395)
+
+
+Started POST "/sessions" for ::1 at 2020-03-23 23:33:08 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 848)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 09:51:16 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 345ms (Views: 4.4ms | ActiveRecord: 23.4ms | Allocations: 7578)
+
+
+Started POST "/users" for ::1 at 2020-03-24 09:54:31 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing123123", "password"=>"[FILTERED]", "user"=>{"username"=>"testing123123"}}
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (23.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "testing123123"], ["password_digest", "$2a$12$LfarMRRC9Jdh.XTFFubsBOc/I2/oQCXvQYGxwxgSLYzDOC4Jk1JPu"], ["created_at", "2020-03-24 13:54:32.064440"], ["updated_at", "2020-03-24 13:54:32.064440"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.65ms)
+Completed 200 OK in 352ms (Views: 3.2ms | ActiveRecord: 33.5ms | Allocations: 5295)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 10:05:35 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"testing123123", "session"=>{"username"=>"testing123123"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123123"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 404 Not Found in 314ms (Views: 2.2ms | ActiveRecord: 1.1ms | Allocations: 833)
+
+
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Destroy (3.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mComment Destroy (6.7ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mDrawing Destroy (13.3ms)[0m  [1m[31mDELETE FROM "drawings"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  [1m[36mUser Create (12.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Alan"], ["password_digest", "$2a$12$My2L4IPm58AipIsue4MA..HVxd38d8XYLQgiB0RVdNri3a8BwryaK"], ["created_at", "2020-03-24 14:21:32.710893"], ["updated_at", "2020-03-24 14:21:32.710893"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mDrawing Create (0.5ms)[0m  [1m[32mINSERT INTO "drawings" ("title", "description", "image", "published", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Majestic"], ["description", "The Milky Way"], ["image", "https://img.pngio.com/sanic-sticker-transparent-sanic-png-png-download-1024x1024-sanicpng-840_880.png"], ["published", false], ["user_id", 27], ["created_at", "2020-03-24 14:21:32.781221"], ["updated_at", "2020-03-24 14:21:32.781221"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Andrew"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Andrew"], ["password_digest", "$2a$12$OM1ngjMCIOy1hT9q1gtXxeOCNauIEdgkU4AF5Q9M/rwhXWIIPeAiK"], ["created_at", "2020-03-24 14:21:33.085754"], ["updated_at", "2020-03-24 14:21:33.085754"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Austin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Austin"], ["password_digest", "$2a$12$Mo17WWEwtVQT8uNHRpeoN.mcL6WbgUeIFnWGz.8mmJBNTFCKPryrK"], ["created_at", "2020-03-24 14:21:33.370299"], ["updated_at", "2020-03-24 14:21:33.370299"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Lily"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Lily"], ["password_digest", "$2a$12$9vGGvzgRZHobBnhOcy/sOubaDxb8HhxeAxM7Tr1q8LwdR4qG2MkYO"], ["created_at", "2020-03-24 14:21:33.643862"], ["updated_at", "2020-03-24 14:21:33.643862"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rosie"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Rosie"], ["password_digest", "$2a$12$jnTucs1Cil88A4FoKIIp/.BGxmbmDD3oZyujH4YCmaU/EcLB33RO."], ["created_at", "2020-03-24 14:21:33.915550"], ["updated_at", "2020-03-24 14:21:33.915550"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "This is beautiful, I wish I can draw like that"], ["user_id", 28], ["drawing_id", 4], ["created_at", "2020-03-24 14:21:33.928950"], ["updated_at", "2020-03-24 14:21:33.928950"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "This is mediocre... at best"], ["user_id", 29], ["drawing_id", 4], ["created_at", "2020-03-24 14:21:33.937749"], ["updated_at", "2020-03-24 14:21:33.937749"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "I'm suprised that you were able to draw that with a touch pad."], ["user_id", 30], ["drawing_id", 4], ["created_at", "2020-03-24 14:21:33.944564"], ["updated_at", "2020-03-24 14:21:33.944564"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Someone definitely has a lot of time on their hands"], ["user_id", 31], ["drawing_id", 4], ["created_at", "2020-03-24 14:21:33.951080"], ["updated_at", "2020-03-24 14:21:33.951080"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for ::1 at 2020-03-24 10:21:47 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 136ms (Views: 0.3ms | ActiveRecord: 13.2ms | Allocations: 23875)
+
+
+Started GET "/users" for ::1 at 2020-03-24 10:37:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 1.2ms | ActiveRecord: 3.5ms | Allocations: 9585)
+
+
+Started GET "/users" for ::1 at 2020-03-24 10:45:35 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 9570)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:03:17 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 285ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 2541)
+
+
+Started GET "/users" for ::1 at 2020-03-24 11:03:30 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 9554)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:05:25 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 277ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1397)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:08:37 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 280ms (Views: 0.6ms | ActiveRecord: 7.7ms | Allocations: 4463)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:18:51 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 420  in 276ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 4413)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:24:53 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 420  in 274ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 1420)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:25:43 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 420  in 273ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1399)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:33:10 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 220  in 276ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 4449)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:35:00 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+Completed 500 Internal Server Error in 33007ms (ActiveRecord: 10.7ms | Allocations: 54324)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:26:in `create'
+Started POST "/users" for ::1 at 2020-03-24 11:35:53 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.63ms)
+Completed 220  in 401ms (Views: 11.8ms | ActiveRecord: 12.5ms | Allocations: 869910)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:36:19 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.43ms)
+Completed 220  in 335ms (Views: 7.6ms | ActiveRecord: 1.2ms | Allocations: 524195)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:37:05 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.83ms)
+Completed 200 OK in 397ms (Views: 14.1ms | ActiveRecord: 10.8ms | Allocations: 1140282)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:38:02 -0400
+Started POST "/users" for ::1 at 2020-03-24 11:38:02 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "user"=>{"username"=>"Bob Doe"}}
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mCACHE User Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (57.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+Processing by UsersController#create as */*
+  [1m[36mUser Create (24.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Bob Doe"], ["password_digest", "$2a$12$BvBZ1jL1nZW5vnY305023.DYTHCaMoJ3nOWTGlobYFJLixlN9ygyu"], ["created_at", "2020-03-24 15:38:02.508199"], ["updated_at", "2020-03-24 15:38:02.508199"]]
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "user"=>{"username"=>"Bob Doe"}}
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (9.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mCACHE User Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (5.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (6.01ms)
+Completed 200 OK in 952ms (Views: 91.3ms | ActiveRecord: 109.0ms | Allocations: 3566943)
+
+
+  [1m[36mUser Create (28.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Bob Doe"], ["password_digest", "$2a$12$VMhbdMdP9e3WYq/B7SNVQ.o4HraF8TRDeE5VJJk39ROXlV7.vhrni"], ["created_at", "2020-03-24 15:38:03.022465"], ["updated_at", "2020-03-24 15:38:03.022465"]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (6.77ms)
+Completed 200 OK in 555ms (Views: 43.0ms | ActiveRecord: 58.1ms | Allocations: 2361080)
+
+
+Started GET "/users" for ::1 at 2020-03-24 11:39:59 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (4.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.0ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (3.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (3.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (3.7ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (4.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 1045ms (Views: 7.4ms | ActiveRecord: 57.9ms | Allocations: 8459513)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:54:05 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+Completed 200 OK in 414ms (Views: 14.5ms | ActiveRecord: 2.0ms | Allocations: 1215100)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 11:55:09 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.0ms)
+Completed 200 OK in 353ms (Views: 41.9ms | ActiveRecord: 7.1ms | Allocations: 680624)
+
+
+Started GET "/users" for ::1 at 2020-03-24 11:56:20 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (3.7ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (3.8ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.0ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (3.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (3.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (4.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 983ms (Views: 6.5ms | ActiveRecord: 30.8ms | Allocations: 8229213)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 11:57:47 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.03ms)
+Completed 200 OK in 330ms (Views: 28.2ms | ActiveRecord: 8.8ms | Allocations: 483624)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 11:58:02 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.69ms)
+Completed 200 OK in 301ms (Views: 9.8ms | ActiveRecord: 1.1ms | Allocations: 310701)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:58:15 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.0ms)
+Completed 200 OK in 359ms (Views: 10.0ms | ActiveRecord: 4.5ms | Allocations: 615761)
+
+
+Started POST "/users" for ::1 at 2020-03-24 11:58:26 -0400
+Started POST "/users" for ::1 at 2020-03-24 11:58:26 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing123", "password"=>"[FILTERED]", "user"=>{"username"=>"testing123"}}
+  [1m[36mUser Exists? (5.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mCACHE User Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (15.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Create (71.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "testing123"], ["password_digest", "$2a$12$ZGTPmmhXxnS.QhKPuZxWRu/z0wuwXfTvrjkqa0j9lAgooc91jhiUi"], ["created_at", "2020-03-24 15:58:27.080211"], ["updated_at", "2020-03-24 15:58:27.080211"]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"testing123", "password"=>"[FILTERED]", "user"=>{"username"=>"testing123"}}
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (24.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testing123"], ["LIMIT", 1]]
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.27ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (6.13ms)
+Completed 200 OK in 427ms (Views: 35.8ms | ActiveRecord: 24.8ms | Allocations: 1033126)
+
+
+Completed 200 OK in 994ms (Views: 106.9ms | ActiveRecord: 125.9ms | Allocations: 3162709)
+
+
+Started POST "/users" for ::1 at 2020-03-24 12:00:35 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"omegaLUL", "password"=>"[FILTERED]", "user"=>{"username"=>"omegaLUL"}}
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "omegaLUL"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mCACHE User Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "omegaLUL"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Create (5.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "omegaLUL"], ["password_digest", "$2a$12$LnPTu.LNTmPZ.SMJjycgx.QUpCpkHW3X0AQ3NgzXdqrBoD4AF1bFS"], ["created_at", "2020-03-24 16:00:36.391805"], ["updated_at", "2020-03-24 16:00:36.391805"]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (6.25ms)
+Completed 200 OK in 480ms (Views: 33.3ms | ActiveRecord: 17.3ms | Allocations: 1524490)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 12:01:28 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"omegaLUL", "password"=>"[FILTERED]", "session"=>{"username"=>"omegaLUL", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "omegaLUL"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+Completed 200 OK in 321ms (Views: 24.9ms | ActiveRecord: 5.2ms | Allocations: 483626)
+
+
+Started POST "/users" for ::1 at 2020-03-24 12:02:59 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"LordJesusSaves", "password"=>"[FILTERED]", "user"=>{"username"=>"LordJesusSaves"}}
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LordJesusSaves"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mCACHE User Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LordJesusSaves"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "LordJesusSaves"], ["password_digest", "$2a$12$OWyMs35yEQr9X.0fib52BuWvvE13YL8qAho13/dPaBI4yXR9GNn2u"], ["created_at", "2020-03-24 16:03:00.155606"], ["updated_at", "2020-03-24 16:03:00.155606"]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (6.42ms)
+Completed 200 OK in 477ms (Views: 38.4ms | ActiveRecord: 6.9ms | Allocations: 1525976)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 12:07:45 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.96ms)
+Completed 200 OK in 316ms (Views: 28.1ms | ActiveRecord: 2.1ms | Allocations: 482153)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 12:08:27 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.69ms)
+Completed 200 OK in 339ms (Views: 29.4ms | ActiveRecord: 5.0ms | Allocations: 483627)
+
+
+Started GET "/users" for ::1 at 2020-03-24 12:21:55 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 27]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.0ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.0ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 30]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (3.5ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 31]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.0ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 32]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 33]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.8ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 34]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 34]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (1.0ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 35]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 35]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 36]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 36]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 1230ms (Views: 11.0ms | ActiveRecord: 26.7ms | Allocations: 10084969)
+
+
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Destroy (2.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mComment Destroy (6.5ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mDrawing Destroy (6.2ms)[0m  [1m[31mDELETE FROM "drawings"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  [1m[36mUser Create (6.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Alan"], ["password_digest", "$2a$12$38r3Fc8ms38TCeyEg01MuOKwQ1SuNCMEh.8Qc1S3vOCOJa0PO4bvS"], ["created_at", "2020-03-24 16:34:20.295472"], ["updated_at", "2020-03-24 16:34:20.295472"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mDrawing Create (0.5ms)[0m  [1m[32mINSERT INTO "drawings" ("title", "description", "image", "published", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Majestic"], ["description", "The Milky Way"], ["image", "https://img.pngio.com/sanic-sticker-transparent-sanic-png-png-download-1024x1024-sanicpng-840_880.png"], ["published", true], ["user_id", 37], ["created_at", "2020-03-24 16:34:20.362879"], ["updated_at", "2020-03-24 16:34:20.362879"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mDrawing Create (0.3ms)[0m  [1m[32mINSERT INTO "drawings" ("title", "description", "image", "published", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Issa Me Mario"], ["description", "Hops for days"], ["image", "https://pngimg.com/uploads/mario/mario_PNG64.png"], ["published", true], ["user_id", 37], ["created_at", "2020-03-24 16:34:20.383158"], ["updated_at", "2020-03-24 16:34:20.383158"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Lily"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Lily"], ["password_digest", "$2a$12$tCYw6lJFiFL/oLIafudSkuqmEsiiZzoB3FjYqkmrtI.8NWkDM/t/2"], ["created_at", "2020-03-24 16:34:20.656987"], ["updated_at", "2020-03-24 16:34:20.656987"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mDrawing Create (0.3ms)[0m  [1m[32mINSERT INTO "drawings" ("title", "description", "image", "published", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Tulip Pixel Art"], ["description", "I only used 6 different colored pixels :)"], ["image", "https://cdn.shopify.com/s/files/1/0822/1983/articles/tulip-2-pixel-art-pixel-art-tulip-flower-plant-pink-lily-pixel-8bit.png?v=1501253296"], ["published", true], ["user_id", 38], ["created_at", "2020-03-24 16:34:20.663385"], ["updated_at", "2020-03-24 16:34:20.663385"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Andrew"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Andrew"], ["password_digest", "$2a$12$gEAYpO5adWswBvoB9d.KyOrpnYiOMFpsN6WF0hsRCUudx0newBN/O"], ["created_at", "2020-03-24 16:34:20.930166"], ["updated_at", "2020-03-24 16:34:20.930166"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Austin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Austin"], ["password_digest", "$2a$12$lLEmCrpchvW.8gm9DLbCX.Qs3uAsR/cGX/wKSk6mxoUOxUsp4tfRe"], ["created_at", "2020-03-24 16:34:21.210812"], ["updated_at", "2020-03-24 16:34:21.210812"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rosie"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Rosie"], ["password_digest", "$2a$12$Ocv2OZXnJbtH3QluCH7nyeNF0XSESJsEUI/de.CRaspz6vrLKbt8y"], ["created_at", "2020-03-24 16:34:21.489064"], ["updated_at", "2020-03-24 16:34:21.489064"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "This is beautiful, I wish I can draw like that"], ["user_id", 39], ["drawing_id", 5], ["created_at", "2020-03-24 16:34:21.502946"], ["updated_at", "2020-03-24 16:34:21.502946"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "This is mediocre... at best"], ["user_id", 40], ["drawing_id", 5], ["created_at", "2020-03-24 16:34:21.511201"], ["updated_at", "2020-03-24 16:34:21.511201"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "I'm suprised that you were able to draw that with a touch pad."], ["user_id", 41], ["drawing_id", 5], ["created_at", "2020-03-24 16:34:21.517829"], ["updated_at", "2020-03-24 16:34:21.517829"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "drawing_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dang that's actually astounding... 10/10"], ["user_id", 37], ["drawing_id", 7], ["created_at", "2020-03-24 16:34:21.524097"], ["updated_at", "2020-03-24 16:34:21.524097"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for ::1 at 2020-03-24 12:34:35 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 37]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 37]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 38]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 38]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 39]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 39]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 40]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 40]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mDrawing Load (0.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 41]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 41]]
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 19.2ms | Allocations: 28340)
+
+
+Started GET "/users/37" for ::1 at 2020-03-24 12:39:06 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (24.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (37) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 24.6ms | Allocations: 795)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "users".* FROM "users" WHERE (37) LIMIT $1
+                                             ^
+):
+  
+app/controllers/users_controller.rb:19:in `show'
+Started GET "/users/37" for ::1 at 2020-03-24 12:39:32 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (37) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ (byebug):1:in `show'
+Completed 500 Internal Server Error in 80607ms (ActiveRecord: 14.0ms | Allocations: 145513)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/users_controller.rb:20:in `show'
+Started GET "/users/37" for ::1 at 2020-03-24 12:40:57 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 37]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 37]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 448ms (Views: 8.3ms | ActiveRecord: 21.5ms | Allocations: 3511655)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 12:43:46 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.12ms)
+Completed 200 OK in 359ms (Views: 33.2ms | ActiveRecord: 2.6ms | Allocations: 512441)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 12:46:15 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.88ms)
+Completed 200 OK in 315ms (Views: 26.5ms | ActiveRecord: 2.1ms | Allocations: 446002)
+
+
+Started POST "/users" for ::1 at 2020-03-24 12:48:38 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.98ms)
+Completed 200 OK in 386ms (Views: 11.2ms | ActiveRecord: 1.1ms | Allocations: 913163)
+
+
+Started POST "/users" for ::1 at 2020-03-24 12:48:45 -0400
+Started POST "/users" for ::1 at 2020-03-24 12:48:45 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "user"=>{"username"=>"Bob Doe"}}
+  [1m[36mUser Exists? (6.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `create'
+  [1m[36mCACHE User Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `create'
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:37:in `create'
+  [1m[36mUser Create (7.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Bob Doe"], ["password_digest", "$2a$12$0ulOTLvAW6zez95bRtCKcuzmuZ5qZOjjXKb8qBMZzMebxTHH1ziJ2"], ["created_at", "2020-03-24 16:48:45.883889"], ["updated_at", "2020-03-24 16:48:45.883889"]]
+  ↳ app/controllers/users_controller.rb:37:in `create'
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bob Doe", "password"=>"[FILTERED]", "user"=>{"username"=>"Bob Doe"}}
+  [1m[35m (280.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:37:in `create'
+  [1m[36mUser Exists? (10.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob Doe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `create'
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.86ms)
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+Completed 200 OK in 370ms (Views: 17.7ms | ActiveRecord: 10.1ms | Allocations: 860699)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (6.25ms)
+Completed 200 OK in 927ms (Views: 87.7ms | ActiveRecord: 313.1ms | Allocations: 3245782)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 12:50:40 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.91ms)
+Completed 200 OK in 321ms (Views: 27.2ms | ActiveRecord: 5.1ms | Allocations: 483704)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 13:02:41 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.12ms)
+Completed 200 OK in 330ms (Views: 31.0ms | ActiveRecord: 3.3ms | Allocations: 536168)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 13:03:22 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.95ms)
+Completed 200 OK in 335ms (Views: 30.0ms | ActiveRecord: 9.3ms | Allocations: 481462)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 13:04:19 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.86ms)
+Completed 200 OK in 342ms (Views: 32.9ms | ActiveRecord: 2.3ms | Allocations: 482231)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 13:10:02 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.87ms)
+Completed 200 OK in 336ms (Views: 28.9ms | ActiveRecord: 6.4ms | Allocations: 536166)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 15:42:44 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.99ms)
+Completed 200 OK in 357ms (Views: 28.2ms | ActiveRecord: 3.7ms | Allocations: 535422)
+
+
+Started POST "/users" for ::1 at 2020-03-24 15:43:04 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.07ms)
+Completed 200 OK in 365ms (Views: 12.1ms | ActiveRecord: 4.7ms | Allocations: 622460)
+
+
+Started POST "/users" for ::1 at 2020-03-24 15:43:17 -0400
+Started POST "/users" for ::1 at 2020-03-24 15:43:17 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (6.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.23ms)
+Completed 200 OK in 389ms (Views: 16.4ms | ActiveRecord: 6.5ms | Allocations: 656633)
+
+
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "user"=>{"username"=>"Alan"}}
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.06ms)
+Completed 200 OK in 356ms (Views: 11.4ms | ActiveRecord: 2.5ms | Allocations: 623004)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 16:37:48 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.14ms)
+Completed 200 OK in 360ms (Views: 33.3ms | ActiveRecord: 7.7ms | Allocations: 535424)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 17:25:12 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.74ms)
+Completed 200 OK in 372ms (Views: 34.1ms | ActiveRecord: 7.3ms | Allocations: 535422)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 18:12:51 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"abanks229", "password"=>"[FILTERED]", "session"=>{"username"=>"abanks229", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abanks229"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.22ms)
+Completed 200 OK in 46ms (Views: 12.5ms | ActiveRecord: 5.0ms | Allocations: 350177)
+
+
+Started POST "/sessions" for ::1 at 2020-03-24 18:12:57 -0400
+Started POST "/sessions" for ::1 at 2020-03-24 18:12:57 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (26.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.99ms)
+Completed 200 OK in 534ms (Views: 175.5ms | ActiveRecord: 30.7ms | Allocations: 1202276)
+
+
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.05ms)
+Completed 200 OK in 358ms (Views: 27.7ms | ActiveRecord: 8.6ms | Allocations: 543485)
+
+

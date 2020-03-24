@@ -12,13 +12,14 @@ const SESSIONS_URL = `${BASE_URL}/sessions`
 
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    fetchAboutPage()
     let new_drawing_btns = document.querySelectorAll('.new_drawing_button')
     new_drawing_btns.forEach(btn => btn.addEventListener('click', createNewDrawing))
+
     let loginBtns = document.querySelectorAll('.login_button')
     loginBtns.forEach(btn => btn.addEventListener('click', userLoginPage))
+
     let logoutBtns = document.querySelectorAll('.logout_button')
-    logoutBtns.forEach(btn => btn.addEventListener('click', userLoginPage))
+    logoutBtns.forEach(btn => btn.addEventListener('click', clearSession))
     let postBtns = document.querySelectorAll('.post_button')
     postBtns.forEach(btn => btn.addEventListener('click', allDrawingsPage))
     let aboutBtns = document.querySelectorAll('.about_button')
@@ -27,7 +28,28 @@ document.addEventListener("DOMContentLoaded", ()=> {
     signUpBtn.addEventListener('click', signUpPage)
     let userDrawingBtns = document.querySelectorAll('.user_drawings_button')[0]
     userDrawingBtns.addEventListener('click', userShowPage )
+    fetchAboutPage()
+    window.onload = function() {
+        Particles.init({
+            selector: '.background',
+          color: ['#1258DC', '#FB8604'],
+          connectParticles: true,
+          responsive: [{
+              breakpoint: 800,
+            options: {
+                color: '#00C9B1',
+                maxParticles: 80,
+              connectParticles: false
+            }
+          }]
+        })
+    }
 })
+ 
+function clearSession(){
+    sessionStorage.clear()
+    fetchAboutPage()
+}
 
 function fetchAboutPage(){
     acquireAllPages().forEach(page => {
@@ -51,51 +73,7 @@ function userLoginPage(){
         }
     })
     let loginForm = document.getElementById("login_form")
-    loginForm.addEventListener('submit', (event) => getUserObject(event))
-}
-
-function getUserObject(event){
-    //Why do I need event.preventDefault here... in order to prevent
-    //catch error from occuring
-    event.preventDefault()
-    let newObj = {}
-    username = event.currentTarget.querySelector('#login_username').value
-    password = event.currentTarget.querySelector('#login_password').value
-    newObj["username"] = username
-    newObj["password"] = password
-    fetch(SESSIONS_URL, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newObj)
-    })
-        .then(resp => {
-            if(resp.status === 200){
-                return resp.json();
-            }
-        })
-        .then(user_obj => userShowPage(user_obj)
-            //console.log(desired_user) //=> {user_id: 17} //refer too sessions_controller
-        )
-        .catch((error) => {
-            userLoginPage()
-            alert("That combination of username and password is invalid")
-        })
-}
-    
-function userShowPage(user_obj){
-    acquireAllPages().forEach(page => {
-        if (page.id === "user_drawings_show_page"){
-                page.style.display = "block";
-                console.log("login page")
-        } else {
-                document.getElementById(`${page.id}`).style.display = "none";
-        }
-    })
-    let h1 = document.getElementById('username_h1')
-    h1.innerText = `Welcome ${user_obj.username}. This is your show page`
-    let div_container = document.getElementById('user_drawings_show_page')
+    loginForm.addEventListener('submit', (event) => validateLogin(event))
 }
 
 function signUpPage(){
@@ -109,7 +87,28 @@ function signUpPage(){
     })
     let submitForm = document.getElementById("create_user_form")
     submitForm.reset()
-    submitForm.addEventListener('submit', validateUserCreation)
+    submitForm.addEventListener('submit', (event) => validateUserCreation(event))
+}
+
+function validateLogin(e){
+    e.preventDefault()
+    userObj = {}
+    userObj["username"] = e.currentTarget.querySelector('#login_username').value
+    userObj["password"] = e.currentTarget.querySelector('#login_password').value
+    fetch(SESSIONS_URL, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(userObj)
+    })
+    .then(resp => resp.json())
+    .then(resp => {
+        if (resp.status === 220){
+            alert(resp.message)
+            userLoginPage()            
+        } else {
+            return createSession(resp)
+        }
+    }) //{id: 18, username: "testing123", password_digest: ... }
 }
 
 function validateUserCreation(e){
@@ -129,12 +128,34 @@ function validateUserCreation(e){
         },
         body: JSON.stringify(newUserObj)
     })
+    .then(resp => resp.json())
+    .then(respJson => {
+        if (respJson.status === 220){
+            alert(respJson.message)
+            signUpPage()
+        } else {
+            return createSession(respJson)
+        }
+    })
 }
 
-function createNewDrawing(e){
+// coming from login our new_user is => new_user = {user_id: 37, username: "Alan"}
+// coming from signup our new_user is => new_user = {id: 42, username: "Bob Doe"}
+function createSession(new_user){
+
+    if (new_user.id){
+        sessionStorage.setItem("id", new_user.id)
+        sessionStorage.setItem("username", new_user.username)
+        createNewDrawing()
+    } else {
+        sessionStorage.setItem("id", new_user.user_id)
+        sessionStorage.setItem("username", new_user.username)
+        userShowPage()
+    }
+}
+function createNewDrawing(){
     //After creating an account make a pop-up saying You have no drawings yet
     //Create a new drawing!
-    let username = e.currentTarget.children[1].value
     acquireAllPages().forEach(page => {
         if (page.id === "user_new_drawing_container"){
             page.style.display = "block";
@@ -145,21 +166,23 @@ function createNewDrawing(e){
     })
     //targetting event listener here
     let div_container = document.getElementById('user_new_drawing_container')
-    let greetingHeader = document.createElement('h1')
-    greetingHeader.innerText = `Welcome ${username}!`
-    let noob_paragraph = document.createElement('p')
-    noob_paragraph.innerText = "Let's get you started off by creating a drawing\n You can choose either to publish it now or save it to work on for later!"
-    div_container.append(greetingHeader, noob_paragraph)
+    let greetingHeader = document.getElementById('username_drawpage_h1')
+    greetingHeader.innerHTML = ""
+    greetingHeader.innerText = `Welcome ${sessionStorage.getItem("username")}!`
+    
+    //Let's get newbie paragraph to show up if user's drawings.length === 0
+    // let newbie_paragraph = document.createElement('p')
+    // newbie_paragraph.innerText = "Let's get you started off by creating a drawing\n You can choose either to publish it now or save it to work on for later!"
+    // div_container.append(greetingHeader, newbie_paragraph)
     
     let submitBtn = document.getElementById('create_new_drawing')
     submitBtn.addEventListener('submit', (event) => save_or_publish(event))
-    
 }
 
 function save_or_publish(e){
     // After user creates drawing... make a new Fetch call to drawings database
     // after fetch call... 
-
+    
     e.preventDefault()
     if (e.currentTarget.querySelector('#publish').checked === false){
         userShowPage(e)
@@ -179,15 +202,44 @@ function allDrawingsPage(drawing_form){
             document.getElementById(`${page.id}`).style.display = "none";
         }
     })
+    
+    let drawings_container = document.getElementsByClassName("all_published_drawings")[0]
+    
 }
 
-function removeUser(event){
-    let userId = event.curretTarget.dataset.userId
+function userShowPage(){
 
+    acquireAllPages().forEach(page => {
+        if (page.id === "user_drawings_show_page"){
+                page.style.display = "block";
+                console.log("login page")
+        } else {
+                document.getElementById(`${page.id}`).style.display = "none";
+        }
+    })
+
+    let h1 = document.getElementById('username_h1')
+    h1.innerText = `Welcome ${sessionStorage.getItem("username")}. This is your show page`
+    let div_container = document.getElementById('all_user_drawings')
+    //fetchUserDrawings()
+
+}
+function fetchUserDrawings(){
+    debugger
+    //check to see if sessionStorage is still working here
+    //fetch(USERS_URL)
+}
+
+function fetchAllDrawings(){
+
+}
+
+function removeUser(){
+    debugger
+    let userId = sessionStorage("id").value
     fetch(`${USERS_URL}/${userId}`, {
         method: "DELETE"
     })
-
     fetchAboutPage()
 }
 
@@ -220,3 +272,64 @@ function acquireAllPages(){
  <div id="id_name" style="display:block">
 
 */
+
+
+//ehhh i should get rid of these as global variable stuff
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+
+
+
+/*
+************ DRAWING CODEEEE *************
+*/
+
+// function start (e) {
+//   isDrawing = true;
+//   draw(e);
+// }
+
+// function draw ({clientX: x, clientY: y}) {
+//   if (!isDrawing) return;
+//   ctx.lineWidth = stroke_weight.value;
+//   ctx.lineCap = "round";
+//   ctx.strokeStyle = color_picker.value;
+
+//   ctx.lineTo(x, y);
+//   ctx.stroke();
+//   ctx.beginPath();
+//   ctx.moveTo(x, y);
+// }
+
+// function stop () {
+//   isDrawing = false;
+//   ctx.beginPath();
+// }
+
+// function clearCanvas () {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+// }
+
+// window.addEventListener('resize', resizeCanvas);
+// function resizeCanvas () {
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+// }
+// resizeCanvas();
