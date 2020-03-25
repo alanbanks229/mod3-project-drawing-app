@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", ()=> {
     aboutBtns.forEach(btn => btn.addEventListener('click', fetchAboutPage))
     let signUpBtn = document.querySelectorAll(".sign_up_button")[0]
     signUpBtn.addEventListener('click', signUpPage)
-    let userDrawingBtns = document.querySelectorAll('.user_drawings_button')[0]
-    userDrawingBtns.addEventListener('click', userShowPage )
+    let userDrawingBtn = document.querySelectorAll('.user_drawings_button')[0]
+    userDrawingBtn.addEventListener('click', userShowPage )
+    let pubUserDrawingBtn = document.querySelectorAll('.user_drawings_button')[1]
+    pubUserDrawingBtn.addEventListener('click', is_user_logged_in)
     let submitBtn = document.getElementById('create_new_drawing')
     submitBtn.addEventListener('submit', (event) => processImage(event))
-
-    console.log("WTF?")
 
 
     fetchAboutPage()
@@ -51,7 +51,18 @@ document.addEventListener("DOMContentLoaded", ()=> {
         })
     }
 })
- 
+
+//This method only applies for guest users who look at published page and attempt to view their own non-existent drawings
+function is_user_logged_in(){
+  debugger
+  console.log("wtf bro")
+  if (sessionStorage.getItem("id")){
+    userShowPage()
+  } else {
+    alert("You need to create an account first to go here")
+  }
+}
+
 function processImage(e){
   e.preventDefault()
   let canvas = document.getElementById('imageView')
@@ -167,7 +178,7 @@ function createSession(new_user){
     } else {
         sessionStorage.setItem("id", new_user.user_id)
         sessionStorage.setItem("username", new_user.username)
-        debugger
+        //debugger
         fetchUserDrawings()
     }
 }
@@ -272,6 +283,7 @@ function appendUserPicture(user_object){
 
 
 function allDrawingsPage(div_containing_image_cards){
+
     acquireAllPages().forEach(page => {
         if (page.id === "all_users_published_drawings_container"){
             page.style.display = "block";
@@ -293,13 +305,16 @@ function fetchAllDrawings(){
     .then(drawing_arr => constructPublishedPage(drawing_arr))
 }
 
+
+// Lord help me... This function is essentially creating the page for
+// All the Image cards we see on Published Drawings page.
 function constructPublishedPage(drawing_arr){
     let parent_div = document.createElement('div')
     parent_div.className = "all_published_drawings"
     drawing_arr.forEach(drawing_object => {
 
       if (drawing_object.published === true){
-
+        let ul_count = 0
         let drawing_card = document.createElement('div')
         drawing_card.className = "drawing_card"
         let creator_heading = document.createElement('p')
@@ -325,6 +340,12 @@ function constructPublishedPage(drawing_arr){
           commentsHeading.innerText = "Comments"
           let ul_comments = document.createElement('ul')
           ul_comments.className = "commentSection"
+          ul_comments.dataset.ulId = ul_count
+          ul_count = ul_count + 1
+          let commentBtn = document.createElement('button')
+          commentBtn.innerText = "New Comment"
+          //debugger
+          commentBtn.addEventListener('click', (event) => makeNewComment(event, `${drawing_object.user.username}`, ul_comments["dataset"].ulId, drawing_object.id))
           drawing_object.comments.forEach(comment => {
             let new_comment_li = document.createElement('li')
             let bold_element = document.createElement('B')
@@ -335,7 +356,7 @@ function constructPublishedPage(drawing_arr){
             new_comment_li.append(bold_element, comment_content) //How do I get username here
             ul_comments.appendChild(new_comment_li)
           })
-          published_image_comments.append(commentsHeading, ul_comments)
+          published_image_comments.append(commentsHeading, commentBtn, ul_comments)
 
           drawing_card.append(image_float_left_div, published_image_comments)
           parent_div.append(drawing_card)
@@ -344,8 +365,35 @@ function constructPublishedPage(drawing_arr){
     })
 }
 
+function makeNewComment(e, publisher_username, ul_id, drawing_object_id){
+  var txt;
+  var input = prompt(`You are commenting on ${publisher_username}'s picture. What would you like to say?\n\n`, "");
+  if (input == null || input == "") {
+    txt = "User cancelled the prompt."
+  } else {
+    txt = input
+  }
+  let new_li = document.createElement('li')
+  let target_ul = document.querySelector("[data-ul-id=\"" + `${ul_id}` + "\"]")
+  new_li.innerText = input
+  debugger
+  target_ul.appendChild(new_li)
+
+  newObj = {}
+  newObj["content"] = input
+  newObj["user_id"] = sessionStorage.getItem("id")
+  newObj["drawing_id"] = drawing_object_id
+  //adding comment to database
+  fetch(COMMENTS_URL, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newObj)
+  })
+}
+
 function removeUser(){
-    debugger
     let userId = sessionStorage("id").value
     fetch(`${USERS_URL}/${userId}`, {
         method: "DELETE"
