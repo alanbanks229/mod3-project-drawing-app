@@ -1,8 +1,7 @@
 canvas.background {
-    position: absolute;
-    display: block;
+    position: fixed;
     top: 0;
-    left: 0;
+    display: block;
     z-index: -1;
     pointer-events: none;
     background-color: rgba(212,224,247, 0.3);

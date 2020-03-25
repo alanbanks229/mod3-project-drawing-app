@@ -11301,3 +11301,651 @@ Processing by DrawingsController#index as */*
 Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 9896)
 
 
+Started GET "/drawings" for ::1 at 2020-03-25 17:06:05 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:07:09 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 58ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 9899)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:08:02 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 9897)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:09:20 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:10:18 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:12:05 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:12:24 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 57ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 9899)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:12:43 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.7ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:15:18 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:19:12 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:19:32 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.8ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 2.4ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:21:35 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (1.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 52ms (Views: 0.9ms | ActiveRecord: 4.0ms | Allocations: 9899)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:23:34 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:31:29 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.7ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 10028)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:33:30 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:33:43 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 9899)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:36:07 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:37:25 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:38:08 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (1.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:39:07 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 9896)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:41:00 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 9899)
+
+
+Started POST "/sessions" for ::1 at 2020-03-25 17:41:12 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 322ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 1559)
+
+
+Started GET "/users/69" for ::1 at 2020-03-25 17:41:12 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"69"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 69]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 69]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 2989)
+
+
+Started POST "/drawings" for ::1 at 2020-03-25 17:41:26 -0400
+Processing by DrawingsController#create as */*
+  Parameters: {"title"=>"YO", "description"=>"Is this working my dude?", "image"=>"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAdQklEQVR4Xu2dW8xuR1nH/3Tv3RPSlrZiSYxSo0K40Vr0StTW6JUmYqoEQTBGEzXRGPFGg6fg4UZN9ELjASMgaMCoF15hbD3dGIpyV1GTKiZa7IG2SM+omX5rutf37vW+a2atmVnPM+v3JUbdncMzv/+z5v/OzDq8TPxBAAJWCPyvpJdJ+j9JV1kJijggcIxASFb+IACB7QlgHttrQASZBDCQTGAUh0AFAtE8QtNckxUA02QdAiRrHa60CoFUAmPz+HNJ35pakXIQ2JoABrK1AvS/ZwJj8wj/94U9w2Ds/ghgIP40I+I+CISD8vjHoXkfmu5uFBjI7iRnwAYIjM2Dcw8DghDCMgIYyDJu1ILAUgLRPML/Dtcf1+BSktTbnADJu7kEBLAjAtE8wnlHeM7jeUlX72j8DLUzAhhIZ4IyHLMEonmEO62+hYcFzepEYBkEMJAMWBSFwAICt0p6eKgXnzLn3GMBSKrYI4CB2NOEiPoh8MuS3jkyj3jbLtddPxrveiQk8q7lZ/AVCfy9pK+ZMI/HJN1SsV+ahkAzAhhIM9R0tCMC/ynp1SPzeFrStZx77CgDdjJUDGQnQjPMZgQ+K+n6A7MIB+g8LNhMAjpqRQADaUWafvZA4DlJlybMI4yda20PGbCzMZLUOxOc4VYj8Lnh2Y7xSoND82q4adgCAQzEggrE4J3A1Lc84r89I+k67wMkfghMEcBAyAsIrCMwZR4cmq9jSm0nBDAQJ0IRpkkCTw2ri8MDcg7NTcpFUKUJYCClidLeXgi8XdJ7J+6uiq8s4draSybseJwk+Y7FZ+irCEwZBYfmq5BS2RsBDMSbYsRrgcAp8+DQ3IJCxNCEAAbSBDOddEQgrjLuk3T3MK5HhteT8LBgR0IzlHkCGMg8I0pAIBKI5hGe+bg4wsKhOTmySwIYyC5lZ9ALCMT3W03dcRWa41paAJUqvgmQ9L71I/p2BKZWGXFF8q+SvqxdKPQEARsEMBAbOhCFbQJTh+ZTL020PQqig0BhAhhIYaA01x2BY7fmcu7RndQMKJcABpJLjPJ7IhDN46HR9z3C+HlYcE9ZwFiPEsBASA4ITBN4frjT6vDQfOo2XhhCYJcEMJBdys6gZwjcK+muideUTH3vA5gQ2C0BDGS30jPwEwSObVFx7kHaQGBEAAMhHSBwnsAp8wgluWbIGAgMBLgYSAUIXCYQzzfeIel9IzDx339F0o8DDAIQOCOAgZAJEDgjEE0ifAzq+hGU+Kna8N8vAAsCELhMAAMhGyAghZXFj00cmgc2nHuQIRA4QgADITUgcPy5Dp73IDsgcIIABkJ67J1A3Lq6RdJjE+ceb5D0sb1DYvwQmCKAgZAXeybwj5K+cmLrinOPPWcFY08mgIEko6JghwSmtqjulHT/kfOQDhEwJAgsJ4CBLGdHTd8ETr0kMYyMa8O3vkTfgAAXSQPIdGGOwMOSbh1u3R3fmnvMVMwNgIAgYIEABmJBBWJoTWDq1lzOPVqrQH/uCWAg7iVkAJkEplYZp54DyWye4hDYDwEMZD9aM1IpPGV+raRnJF03AsLzHmQHBBYQwEAWQKOKWwKnvmvOteBWVgLfigAXzVbk6bc1gamtq/hv4Tsf17QOiP4g4J0ABuJdQeJPIfDC8CLERyR9/lDh2EejUtqjDAQgwL3u5MBOCExtXXHusRPxGWY9AqxA6rGlZRsEpoyC5z1saEMUzglgIM4FJPyTBKJRfFzSHUPJ+G9PSXo5/CAAgeUEMJDl7Khpm8DNkh49eKfVv0j6Ut5zZVs4ovNDAAPxoxWR5hGY2rri3COPIaUhcJIABkKC9EggblP9qqR3HmxdkfM9Ks6YNiHAxbQJdjqtTODwrqtoKGFLK7xEkT8IQKAAAQykAESaMEXgcJvqTyS9iXMPUxoRTCcEMJBOhGQYLxJ4VtLVkv5Z0msHJpx7kBwQqEQAA6kElmY3IXBs64o830QOOu2dABdW7wrvZ3yHDwf+9/DakmAqV+0HAyOFQDsCGEg71vRUj8BfSrpbUvgo1EW2ruqBpmUIjAlgIORDDwQOzzl4VUkPqjIG8wQwEPMSEeAMgWgW3yzpLySFV7NfmvjeOSAhAIHCBDCQwkBprjmBw4PzqTfvNg+KDiGwBwIYyB5U7neMh1tVbF31qzUjM0gAAzEoCiElEXhS0iskhbutvmA4QA93Wz0/PAuS1AiFIACB5QQwkOXsqLktAbautuVP7xAQBkISeCRwuFXF0+YeVSRm9wQwEPcS7m4AvybpR0bvtopm8rCkV+2OBgOGwIYEMJAN4dP1IgKHqw3uulqEkUoQWE8AA1nPkBbaEYirjbAK+dFhFRJ6J4/badBLT/dJuquXwWw1Di68rcjT7xIC49VGNJM/lfTtSxqjzq4JPC3pIUm375rCysFjICsBUr0ZgfHBOd/4aIa9244elHSbpOu6HWGDgWEg5yFzN0+DpFvQxaeGA/LPSLqBrasFBI9XicZctFEHjd0v6U7e1LxOKQwEA1mXQW1qT21dkbvr2H9Y0j3rmnBdO+RPMM/wQOpNrkeyYfBchOfh8yqMDZPxSNdjTfjGRxl9xquOD0h6W5lm3bUSzkGuYRWyXDcM5Ep23Ba6PJ9K1/wmSR8ZPfPBFmMZwuT4ZY6BxW9K+qEyaPfVCgZypd6sQuxcA2PDQJcyuoSPboV3hnHtn/F8dsAaViL8ZRIgiaaB8QstM5EqFH9B0gVJ90r62uEFicFEwr/xt5wAuX2e3W9I+kEMdVlCYSDT3PiVtiyfStYaT3RMemXIPjHcxRYOjm8s02QXrYQfJuEHy9VdjKbhIDCQ47CZtBom4kFX4+0qtq7K6QDLaZbPDIfpzIeZuQaw48DiKuQBSa/P5Erx5QQ+IenLh0/TXhz26/nGx3Ke45rhRxHbgMe3rcPzRuHhQv4SCWAgp0Fx109iIhUsNmbOKrAcWFYfp1mG15qED5MxJ2bkHLBOw4oHufwCzkiqFUXHkxzmvQLkRFXMeJ5nYMQqZJ7TSyUwkHlYTGTzjEqUeI+k7z14TQnf+ChB9qyNkMdhWzZsC/I3TYBVSGZmYCDzwJ6TdImLbx7UyhJsXa0EeKJ6XElzvc8zDnkY37k2X3rnJUiotARgFZLGaWkptq6Wkkurx/lHGqdQClbprDgwSmQV7sR6HXewJNLKKxa3Dca/kvnGRx7DudKcf8wRuvzf2cZKZ4WBZLDil0kGrIyicXL7tKSbR++9ymiCojMEOP9IT5Hw4+XbuBsrDRhbWGmcYinuo8/jNVf6cOsq8A3vaeKvHAHOP/JYhh8xj0q6RdJjeVX3VxoDydOcVUger1Olw63R4Y6gcNtkuP8+/JGP5fjGlsjZfKbhh8yfSXpTftV91eCCzdeb/eR8ZlM1IsdoHOHXXvjVx19ZAtwAks+T50ESmWEgiaBGxfhFl8/ssEac1IJpcO6xnuepFjCQfL5sVScyw0ASQR0UYxWyjFuoFQ3494YHB9m6Ws4ypSYGkkLpfBnexp3IDANJBHVQLE6Cj0t65bImdllr/LR5zD1ysG4qYCD5fD8u6Ss4k5sHx8U7z+hYCS7MfHaRWfjfIfc498hnmFuDPM0ldlY+cPtJSb+0rPo+amEg63RmKyudX1y1ce6RzqxESQxkGcXAjR2GGXYYyLLkirXiXinfWDjNcfy0eXyZH7m3LvdSa2MgqaTOl4NbAjcu4gRIM0W4K2ue4eEtu+TdPLNSJZgIl5EMq4/w2V9y9QQ/4CxLrsNaXKTHOUaD5dyjTK7ltkJu5hI7K/8Tkn4RAzkNDwNZllyHteKvFV7FcZ5MfNo8bPVd4D1XZZItsxUMJBPYqHhgF+7IumN5E33XxEDK6cutvVeyjFtX3LJbLs9yW8JAcoldLs9NMjPsMJDlyTVVk4v1/MUX/r+4dUWulc211NbIyVRSV5bjgUIMZHn2LKzJr5bLT5tz7rEwiQpWw0CWw3yHpN+X9HZJ71/eTL81+VVYXltu7T1bdUTz4FyofI7ltIiB5NCa3oYNr8QPn7Xm74AABlInJfZ8a28ceyRLjtXJsdRWMZBUUtPl4o0g5PEEH6CsS65Ttfd64cZxBzbkV738Sm15r3mYymeuXNi+eq+ksJ31vrnCe/vvXOD1FA+faL1pZ7eujlcfvOeqXm7ltIyB5NCaLhsYso3FCmR9JmW2ECfUJwYzyazurnicrDj3sCMdBrJeC7axjjBkBbI+ueZa2MsFPF59kFdzWdHuv+8l/2oS/e5h++p7hu2smn25apsLvY1cvd/a+xZJHxxQklNtciq1FwwkldTpcmxjsYVVJpMWtNL7rb3jV7XzXfMFCVKxCgZSBi4cMZAymbSwlV5v7X1uuEeec4+FiVG5GhNfGcBwxEDKZNKKVnpMwh7HtEJic1V73z5tBZw8x0Ba5drRfnq7tTdeVA9Iev3mdAlgigAGUiYvMBAMpEwmrWyll60s7rpamQiNqmMgZUBjIBhImUwq0EoPyRjH8CFJby7AhCbqEMBAynDt4ZotQ2LUCrdcFkea1GB8MMnrt9THXxm8KmnEFNqKQJj4vObZVsyObQWGf2fOxEBM5KXnraz4a+y7JP2hCZoEcYxA0CrcRn4RRKsIsAJhC2tVAtWo7HF7gdVHjUyo12bIsf+R9Ip6XeyiZQwEAzGX6HEy/mNJ32EuuisD+g9JXzj8M0t5B4INL/P8gKS3+QjXbJQYCAZiMjk9JWaMlYcGTabSFUH9gaS3sm9fRCxP12mRAac0wq/IFEp1y4Q39d7g4KAzvM76AquPuslQuPXPSPo8DKQIVQyEFUiRRKrRiIcDdVYfNZSv22Y0fX4orueMgWAg67OoYguWD9TjyyDD8JmMKiZB4aajbmi2HiwGgoGsz6KKLcSL/UlJN1bsZ0nTrD6WUNu+joeV7faU0iLAQDCQtEzZsJTFJOWVJRsmxMquMZCVAEfVLV6b5Ua3sCWWtgvBVar2YUn3GPuOerxweJagkugVm8VAysHFQFiBlMumii1ZuuhZfVQUukHTlnKpwXCrdoGBYCBVE6xk41YO1ONFE54nCN+F5s8XASa9cnrBEgMpl02VW4oH6uE2zEuV+zrWPK8s2Qh8wW6Z9MrBhCUGUi6bGrS0ZcLyypIGAjfoYsscajC8pl1Y2RVoOui5zjhEnyO07X/fKmm5bXdb3Uv1joGUIiltdS2WG0GFljCQClALNrnFISivLCko4MZNYSDlBAgs+a7KAU8MpFyC1Wqp9STAbbu1lGzfbuvcaT/Cdj0Gls9KurZdl/Z7wkDsa9Ty64W8ssR+PuREiIHk0DpdNrB8SNKryzXpvyUMxIeGrbayuG3XRz6kRomBpJKaLxdY/pWku+aL7qcEBuJH69qHeNy26ycXUiPFQFJJzZcLLMOzUOGZKP4GAhiIn1SI20ufkPS6CmEz2VSAunGTaFpGgPA1x/fzJuorYWIgZRKsVSu1JoTnhgcWQ/tXtRoM/VQnUCtfqgdurIP7JH0DBoKBGMvL7HD+SdJrK9xOGLevflrSu7OjooJVAhhIGWX+S9JtGAgGUiadtm2lxoE6E822mtbqHV3LkH1G0jUYCAZSJp22b6XkgTqH59vrWSsCDKQMWb7seIQjZyBlEqx1KyVfthgnmXdJ+oXWA6G/qgQwkDJ4a6z6y0S2cSsYyMYCrOi+xOTwwOiOLnJhhRhGq5bIEaNDaxoWBsIKpGnCteps7VYW21etlNqmHwykDPe111mZKAy2wq9Og6JkhBQNIHwK9zsz6sWiTDALoDmqgr5lxMJAWIGUySSDrSydJOI5Cs9+GBS1UEhLc6NQ9900Ezg+IemmbkZUaCCsQAqB3LCZsPq4R2ffK8h5CJD3Xm0oWqOuMZAyoAPH90j6vjLN9dMKBtKHlnEr60OS3pw4JCaXRFCOi6HxevF+W9L38wzINEgMZH2CWWkhZ7KIhsOy3Ip6deJg734918cl3YiBYCDrU8l2CzlbWTlmY3vURHeKAAayPj+4hfcEQ1Yg6xPMUgsx2f9I0ltOBMbEYkm1erGg83q2GAgGsj6LHLWQsroIZcJdWBcdjYtQ8wlgIPnMDmvAEANZn0WOWpjbynpQ0mskvVHS3zkaF6HmE2Dyy2eGgWQwYwsrA5ajonHZ/UFJbz2ImyW5IyFXhhoMJOh9YWU7e67OMyCsQHaZ/8e2slK2uHYJrMNBs1W5XtTA8HeHW3nXt9ZZC6xAOhN0NJypraz45cFQDO371T6OLEx+T0l6ef9DrTLC3xkeHuRaOYIXMFXyzkyjh9tVcfWBgZiRqGogQe/7JX111V76bZxnQGa0xUD6Tf7xr9AwkRxqjfb70B6dl+vMeSEGsjx7nNcMd1uFl7+NXwAXtjOuH8bFxOJc4JnwPyrpDWxVrhIZA8FAViWQ18pxqyoswW8YJpFgGOF/OET3qmpe3J8dfizwQyGP27g0t0FjIMuzx3HNKZOIF0OcUJhYHAucEPoLw+276JwA60iRcM2EG0+uWd5E3zVJrj71nTKQuByPI0b7PrWPo4rfe0Hn5TqH6+inJP388ib6rkly9anv3DMgYdRo36f2cVTs36/T91FJN3OdnIbIJLIuyazWPmYg41UI2ltVr0xcGMg6jvBL4MckkgDJYZFTB+UcojsUdEHITIALoI2qcICewA8DSYDksMgpkwgTS86nbx0On5CHd2DFO+8Akk+A94glMMNAEiA5LMIqw6FohUNmBbIOaLiG/kHSneua6bs2BtKnvhhIn7rmjIocyKF1vuzHJH0VB+jzADGQeUYeSzB5eFStbMzkwHKe3AKdyA4DSQTlrBiThzPBKoRLDiyHyvZfIjsMJBGUs2JMHs4EqxAuObAcKndgJbLDQBJBOSvG5OFMsArhkgPLoQZ2j0m6ZXkT+6iJgfSpM5NHn7rmjIocyKF1uey7JL2bA/Q0eBhIGidvpZg8vClWPl5yYBnTZyVdjYGkwcNA0jh5K8Xk4U2x8vGSA8uYcoCewQ0DyYDlqCiThyOxKoVKDiwDywF6BjcMJAOWo6JMHo7EqhQqOZAP9t8lfRHbV+ngMJB0Vp5KMnl4UqtOrORAPle2rzKZYSCZwJwUZ/JwIlTFMMmBfLiB2fPDIXp+7R3WwED6FJ3Jo09dc0ZFDuTQknh9SR6vF0tjIAugOajC5OFApMohkgN5gDk8z+OFgSzg5aUKk4cXperFSQ6ks/0ZST8r6W8kfX16NUqyAukzB5g8+tQ1Z1TkQDotDs/TWZ0riYEsBGe8GpOHcYEahEcOpENm+yqdFQaykJWnakwentSqEys5kMb1CUk3cB6cBuuwFCuQZdys12LysK5Q/fjIgTTGcErjNFkKA1kBz3BVLgrD4jQKjRxIAx04PSnpxrTilBoTwED6zAcmjz51zRkVOTBPi8PzeUYnS2AgKwEarc7kYVSYhmGRA/OwOTyfZ4SBrGTksTqTh0fVysZMDpzm+deSvm54/uPnyqLfT2usQPrUmsmjT11zRkUOnKbF9lVONh0pi4EUgGiwCSYPg6I0DokcOA088AkmcqGxLl11h4F0JedLg2Hy6FPXnFGRA8dpPSfpEs9+5KTTdFkMZD1Diy0weVhUpW1M5MBx3hyeF8pFDKQQSGPNMHkYE2SDcMiB0wbySUlfvIEuXXWJgXQlJ1tYfcq5aFQYyDQ2Ds8XpRNbWAWxmW+KycO8RNUDJAeuRHyvpLskBTZXVVdgBx2wAulTZCaPPnXNGRU5cCUtmORkUEJZDCQBksMiXCgORSscMjlwHihbV4UTLDSHgVSAaqBJJg8DImwcAjlwWYDnJV2U9JikWzbWpavuMZCu5HxpMEwefeqaMypy4IzWayQ9yLlHTuqkl8VA0ll5KhmW6+GPg0JPqpWNlS2bM54Yadm8OtcaBlIR7oZNYyAbwjfSNQZy9qqSMMfdLunfjOjSVRgYSFdyvjQYDKRPXXNG9ciw37/Xa/xRSTdLemF4bUkOO8omEthrciXicVsMA3ErXdHAw/ZNmEhvLdqqj8Z4XUkDnTCQBpA36AID2QC6wS73Ooly7tEoGTGQRqAbd4OBNAZutLs9Gkg89whPnX+jUV26CQsD6UbKcwPBQPrUNXdUeztIj+PlVSW5mbKwPAayEJzxahiIcYEahreXVQjm0TCpYlcYyAbQG3SJgTSA7KSL+PGk8DT21U5izg0T88glVqg8BlIIpLFmMBBjgmwcTs9bWZjHhsmFgWwIv2LXGEhFuE6b7nErC/PYOBkxkI0FqNQ9BlIJrONme5tsexuPy9TCQFzKNhs0BjKLaJcFepl0exmH+yTEQNxLODkADKRPXUuMyvvk6z3+EhqaaQMDMSNF0UAwkKI4u2vM6yTsNe7uEigOCAPpU1oMpE9dS47K02T8w5J+fRg8DwmWzIKVbWEgKwEarY6BGBXGWFgeTCTGGND9gKTfMsZw1+FgIH3Kj4H0qWuNUX1K0quGhsP/fVuNTha0yapjAbTWVTCQ1sTb9IeBtOHcUy/xDbYWtohYdTjJLAzEiVCZYX5uKH8hsx7F901gPHEHEuE1KNc0RMKqoyHsEl1hICUo2msDA7GniaeInj14b9Z4dfK4pDskfbLAgMIr198oKf7QifMRZx0F4LZoAgNpQbl9HxhIe+a99ni4Kqk5TgvbZzXH113bGEh3kr44IAykT12tjOpLJH1U0k2S4hySMpfElUzIz7+VdLeVARHHMgIpoi9rmVpbEsBAtqRP3xDYCQEMpE+hMZA+dWVUEDBFAAMxJUexYDCQYihpCAIQOEYAA+kzNzCQPnVlVBAwRQADMSVHsWAwkGIoaQgCEGAFsq8cCN+/Dn+X9jVsRgsBCLQkwAqkJe12fWEg7VjTEwR2SwAD6VN6DKRPXRkVBEwRwEBMyVEsGAykGEoaggAEOAPZVw5gIPvSm9FCYBMCrEA2wV69UwykOmI6gAAEMJA+cwAD6VNXRgUBUwQwEFNyFAsGAymGkoYgAAHOQPaVAxjIvvRmtBDYhAArkE2wV+8UA6mOmA4gAAEMpM8cwED61JVRQcAUAQzElBzFgnl6aOm6Yi3SEAQgAIEDAhhInymBgfSpK6OCgCkCGIgpOYoF8+mhpVcWa5GGIAABCLAC2UUOYCC7kJlBQmBbAqxAtuVfq3cMpBZZ2oUABF4igIH0mQwPDsO6vc/hMSoIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACgf8HcWElaZbA7H0AAAAASUVORK5CYII=", "published"=>true, "user_id"=>"69", "drawing"=>{"title"=>"YO", "description"=>"Is this working my dude?", "image"=>"data:image/png;base64,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S47K02T8w5J+fRg8DwmWzIKVbWEgKwEarY6BGBXGWFgeTCTGGND9gKTfMsZw1+FgIH3Kj4H0qWuNUX1K0quGhsP/fVuNTha0yapjAbTWVTCQ1sTb9IeBtOHcUy/xDbYWtohYdTjJLAzEiVCZYX5uKH8hsx7F901gPHEHEuE1KNc0RMKqoyHsEl1hICUo2msDA7GniaeInj14b9Z4dfK4pDskfbLAgMIr198oKf7QifMRZx0F4LZoAgNpQbl9HxhIe+a99ni4Kqk5TgvbZzXH113bGEh3kr44IAykT12tjOpLJH1U0k2S4hySMpfElUzIz7+VdLeVARHHMgIpoi9rmVpbEsBAtqRP3xDYCQEMpE+hMZA+dWVUEDBFAAMxJUexYDCQYihpCAIQOEYAA+kzNzCQPnVlVBAwRQADMSVHsWAwkGIoaQgCEGAFsq8cCN+/Dn+X9jVsRgsBCLQkwAqkJe12fWEg7VjTEwR2SwAD6VN6DKRPXRkVBEwRwEBMyVEsGAykGEoaggAEOAPZVw5gIPvSm9FCYBMCrEA2wV69UwykOmI6gAAEMJA+cwAD6VNXRgUBUwQwEFNyFAsGAymGkoYgAAHOQPaVAxjIvvRmtBDYhAArkE2wV+8UA6mOmA4gAAEMpM8cwED61JVRQcAUAQzElBzFgnl6aOm6Yi3SEAQgAIEDAhhInymBgfSpK6OCgCkCGIgpOYoF8+mhpVcWa5GGIAABCLAC2UUOYCC7kJlBQmBbAqxAtuVfq3cMpBZZ2oUABF4igIH0mQwPDsO6vc/hMSoIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACgf8HcWElaZbA7H0AAAAASUVORK5CYII=", "published"=>true, "user_id"=>"69"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/drawings_controller.rb:27:in `create'
+  [1m[36mDrawing Create (4.1ms)[0m  [1m[32mINSERT INTO "drawings" ("title", "description", "image", "published", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "YO"], ["description", "Is this working my dude?"], ["image", "data:image/png;base64,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S47K02T8w5J+fRg8DwmWzIKVbWEgKwEarY6BGBXGWFgeTCTGGND9gKTfMsZw1+FgIH3Kj4H0qWuNUX1K0quGhsP/fVuNTha0yapjAbTWVTCQ1sTb9IeBtOHcUy/xDbYWtohYdTjJLAzEiVCZYX5uKH8hsx7F901gPHEHEuE1KNc0RMKqoyHsEl1hICUo2msDA7GniaeInj14b9Z4dfK4pDskfbLAgMIr198oKf7QifMRZx0F4LZoAgNpQbl9HxhIe+a99ni4Kqk5TgvbZzXH113bGEh3kr44IAykT12tjOpLJH1U0k2S4hySMpfElUzIz7+VdLeVARHHMgIpoi9rmVpbEsBAtqRP3xDYCQEMpE+hMZA+dWVUEDBFAAMxJUexYDCQYihpCAIQOEYAA+kzNzCQPnVlVBAwRQADMSVHsWAwkGIoaQgCEGAFsq8cCN+/Dn+X9jVsRgsBCLQkwAqkJe12fWEg7VjTEwR2SwAD6VN6DKRPXRkVBEwRwEBMyVEsGAykGEoaggAEOAPZVw5gIPvSm9FCYBMCrEA2wV69UwykOmI6gAAEMJA+cwAD6VNXRgUBUwQwEFNyFAsGAymGkoYgAAHOQPaVAxjIvvRmtBDYhAArkE2wV+8UA6mOmA4gAAEMpM8cwED61JVRQcAUAQzElBzFgnl6aOm6Yi3SEAQgAIEDAhhInymBgfSpK6OCgCkCGIgpOYoF8+mhpVcWa5GGIAABCLAC2UUOYCC7kJlBQmBbAqxAtuVfq3cMpBZZ2oUABF4igIH0mQwPDsO6vc/hMSoIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACAQzEggrEAAEIQMAhAQzEoWiEDAEIQMACgf8HcWElaZbA7H0AAAAASUVORK5CYII="], ["published", true], ["user_id", 69], ["created_at", "2020-03-25 21:41:26.130494"], ["updated_at", "2020-03-25 21:41:26.130494"]]
+  ↳ app/controllers/drawings_controller.rb:27:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/drawings_controller.rb:27:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Drawing (0.8ms)
+Completed 200 OK in 56ms (Views: 2.1ms | ActiveRecord: 6.3ms | Allocations: 3738)
+
+
+Started GET "/users/69" for ::1 at 2020-03-25 17:41:26 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"69"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  [1m[36mDrawing Load (0.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 69]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 69]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2700)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 17:41:28 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (1.1ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 11592)
+
+

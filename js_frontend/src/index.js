@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     fetchAboutPage()
     window.onload = function() {
-        console.log("working")
         Particles.init({
             selector: '.background',
           color: ['#1258DC', '#FB8604'],
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
               breakpoint: 800,
             options: {
                 color: '#00C9B1',
-                maxParticles: 80,
+                maxParticles: 200,
               connectParticles: false
             }
           }]
@@ -285,6 +284,7 @@ function allDrawingsPage(div_containing_image_cards){
     let drawings_container = document.getElementById("container_for_all_pub_drawings_plus_content")
     drawings_container.innerHTML = "" //clearing our drawings page and rebuilding it
     drawings_container.appendChild(div_containing_image_cards)
+    let canvas = document.querySelector(".background")
 }
 
 function fetchAllDrawings(){
