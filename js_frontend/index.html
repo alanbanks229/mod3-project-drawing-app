@@ -4,13 +4,30 @@
   <head>
     <meta charset="utf-8" />
     <title>Drawing Application</title>
-    <script type="text/javascript" src="src/index.js"></script>
+    <!-- <style type="text/css">
+      #containerFORCANVAS {
+        position: relative;
+        background-color: aquamarine;
+      }
+
+      #imageView {
+          border: 1px solid #000;
+      }
+
+      #imageTemp {
+          position: absolute;
+          top: 1px;
+          left: 1px;
+      }
+      </style> -->
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="canvas.css" />
   </head>
 
   <!-- document.getElementById("myDIV").style.display = "none"; -->
   <!-- https://www.w3schools.com/jsref/prop_style_display.asp look here for display = value tips -->
   <body>
+    <canvas class="background"></canvas>
     <!--This should be recreated when a user logs in i think -->
     <div class="topnav">
       <input class="about_button" type="button" value="About">
@@ -70,22 +87,36 @@
       <br>
       <br>
       <div class="overall_drawing_container">
+        <!-- <canvas id="drawingCanvas"></canvas>
+        <main>
+          <section class="colors">
+            <input type="text" class="color-picker" value="#DC143C" />
+          </section>
+          <section class="thickness">
+            <input type="number" class="stroke-weight" value="3" />
+          </section>
+          <button class="clear">X</button>
+        </main> -->
+        <p>
+          <label for="favcolor">Select A Color</label>
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+          <select id="dtool">
+              <option value="line">Line</option>
+              <option value="rect">Rectangle</option>
+              <option value="pencil">Pencil</option>
+          </select>
+          </p>
+          <div id="containerFORCANVAS">
+              <canvas id="imageView" width="400" height="300">
+              </canvas>
+          </div>
+        <br>
         <form id="create_new_drawing">
+          <input type="hidden" name="imageView" id="theImageData"/>
           <label for="save">Save</label>
           <input id="save" type="radio" name="user_choice" checked/>
           <label for="publish">Publish</label>
           <input id="publish" type="radio" name="user_choice"/>
-          <br>
-          <canvas id="drawingCanvas"></canvas>
-          <main>
-            <section class="colors">
-              <input type="text" class="color-picker" value="#171717" />
-            </section>
-            <section class="thickness">
-              <input type="number" class="stroke-weight" value="3" />
-            </section>
-            <button class="clear">X</button>
-          </main>
           <br>
           <label for="title">Title: </label>
           <input type="text" id="title_input" name="title" placeholder="input title for this drawing"><br>
@@ -114,32 +145,73 @@
       <div class="all_user_drawings">
         <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
-        <img class="mySlides" src="https://img.pngio.com/sanic-sticker-transparent-sanic-png-png-download-1024x1024-sanicpng-840_880.png">
-        <img class="mySlides" src="https://pngimg.com/uploads/mario/mario_PNG64.png">
-        <img class="mySlides" src="https://www.itl.cat/pngfile/big/0-3983_galaxy-wallpaper-galaxy-background-16-9.jpg">
-        <!-- Here you are suppose to set up a fetch call and create elements with js-->
+        <div id="user_img_slides">
+          <!-- <img class="mySlides" src="https://img.pngio.com/sanic-sticker-transparent-sanic-png-png-download-1024x1024-sanicpng-840_880.png">
+          <img class="mySlides" src="https://pngimg.com/uploads/mario/mario_PNG64.png">
+          <img class="mySlides" src="https://www.itl.cat/pngfile/big/0-3983_galaxy-wallpaper-galaxy-background-16-9.jpg"> -->
+          <!-- Here you are suppose to set up a fetch call and create elements with js-->
+        </div>
       </div>
       
     </div>
     
     <!--View all the published Drawings-->
     <div id="all_users_published_drawings_container">
+
       <h1>Page for displaying all published drawings </h1>
       <div class="side_nav_bar">
-        <input type="button" class="new_drawing_button" value="Create New Drawing">
-        <br>
         <input type="button" class="user_drawings_button" value="Your Drawings">
         <br>
         <input type="button" class="logout_button" value="Logout">
       </div>
       
-      <div class="all_published_drawings">
-        
-      </div>
+      
+      <div id="container_for_all_pub_drawings_plus_content">
+        <div class="all_published_drawings">
+          <!-- Let's make a new drawing card per image-->
+
+          <div class="drawing_card">
+            <p>Created By: Alan</p>
+            <div class="publish_image_float_left">
+              <img class="publishedPics" src="https://pngimg.com/uploads/mario/mario_PNG64.png">            <div class="published_image_content">
+                  <h2>Title: Super Fast</h2>
+                  <p class="description">Description: I am SPEEEEEEEEEEEEEED</p>
+              </div>
+            </div>
+            <div class="published_image_comments">
+                <h4> Comments </h4>
+                <ul class="commentSection">
+                  <li>OMEGALUL</li>
+                  <li>LULW</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="drawing_card">
+            <p>Created By: Alan</p>
+            <div class="publish_image_float_left">
+              <img class="publishedPics" src="https://pngimg.com/uploads/mario/mario_PNG64.png">            <div class="published_image_content">
+                  <h2>Title: Super Fast</h2>
+                  <p class="description">Description: I am SPEEEEEEEEEEEEEED</p>
+              </div>
+            </div>
+            <div class="published_image_comments">
+                <h4> Comments </h4>
+                <ul class="commentSection">
+                  <li>OMEGALUL</li>
+                  <li>LULW</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       
     </div>
-  <canvas class="background"></canvas>
-  <link rel="stylesheet" href="canvas.css" />
+
+    
+    <script type="text/javascript" src="src/index.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
 </body>
 </html>
+
+

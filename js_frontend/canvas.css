@@ -1,10 +1,18 @@
-body {
+/* body {
 	margin: 0;
 	padding: 0;
 	width: 100vw;
 	height: 100vh;
 	background: #F3F3F3;
 	font-family: 'Roboto', 'Helvetica', sans-serif
+} */
+
+canvas#drawingCanvas{
+    background-color: rgb(177, 177, 177);
+
+    width: 500px;
+    height: 350px;
+    pointer-events: visibleStroke !important; 
 }
 
 main {
@@ -96,3 +104,18 @@ main .clear {
 	outline: none;
 	cursor: pointer
 }
+
+#containerFORCANVAS {
+    position: relative;
+  }
+  
+  #imageView {
+      border: 1px solid #000;
+      background-color: aquamarine;
+  }
+
+  #imageTemp {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+  }

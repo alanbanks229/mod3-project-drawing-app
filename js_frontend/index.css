@@ -1,4 +1,4 @@
-.background {
+canvas.background {
     position: absolute;
     display: block;
     top: 0;
@@ -9,12 +9,20 @@
     /*Need point-events: none or else I can't click anything*/
 }
 
-
 img.mySlides{
-    max-height: 30%;
-    max-width: 35%;
+    max-height: 300px;
+    max-width: 400px;
+    background-color: azure;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
 }
 
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
 
 
 
@@ -25,126 +33,186 @@ LOGIN CSS
 /* Add styles to the form container */
 
 .topnav{
-    background-color: #f1f1f1;
-    overflow: hidden;
+  background-color: #f1f1f1;
+  overflow: hidden;
 }
 
 .topnav input[type=button]{
-    background: none!important;
-    border: none;
-    padding: 0!important;
-    /*optional*/
-    /*font-family: arial, sans-serif;*/
-    /*input has OS specific font-family*/
-    text-decoration: underline;
-    cursor: pointer;
-    margin-right: 2%;
-    float: right;
-    color: #1100ff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  /*font-family: arial, sans-serif;*/
+  /*input has OS specific font-family*/
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 2%;
+  float: right;
+  color: #1100ff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .topnav input[type=button]:hover{
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 
 /*End of Top Nav CSS */
 
 #about_container{
-    margin: auto;
-    margin-top: 10%;
-    display: block;
-    height: auto;
-    width: 22%;
-    text-align: center;
-    background: rgba(245,247,212, 0.521); 
-    padding: 14px 20px; 
-    -webkit-border-radius: 4px; 
-    -moz-border-radius: 4px; 
-    border-radius: 4px;
-    border: black solid 2px;
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  margin: auto;
+  margin-top: 10%;
+  display: block;
+  height: auto;
+  width: 25%;
+  text-align: center;
+  background: rgba(245, 247, 212, 0.76); 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  border: black solid 2px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 #login_page_container {
-    margin: auto;
-    margin-top: 10%;
-    display: block;
-    height: auto;
-    width: 22%;
-    text-align: center;
-    background: rgba(245,247,212, 0.521); 
-    padding: 14px 20px; 
-    -webkit-border-radius: 4px; 
-    -moz-border-radius: 4px; 
-    border-radius: 4px;
-    border: black solid 2px;
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  margin: auto;
+  margin-top: 10%;
+  display: block;
+  height: auto;
+  width: 22%;
+  text-align: center;
+  background: rgba(245,247,212, 0.521); 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  border: black solid 2px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 #login_form {
-    background-color: rgba(0, 192, 80, 0.08);
-    border: 2px 2px 2px rgba(246,248,201, 0.575);
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    display: inline-block;
-    max-width: 350px;
-    padding: 10px;
-    background-color: white;
-  }
-  
-  /* Full-width input fields */
-  #login_form input[type=text], #login_form input[type=password] {
+  background-color: rgba(0, 192, 80, 0.08);
+  border: 2px 2px 2px rgba(246,248,201, 0.575);
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  display: inline-block;
+  max-width: 350px;
+  padding: 10px;
+  background-color: white;
+}
 
-    padding: 15px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    border: none;
-    background: #f1f1f1;
-  }
+/* Full-width input fields */
+#login_form input[type=text], #login_form input[type=password] {
   
-  /* When the inputs get focus, do something */
-  #login_form input[type=text]:focus, #login_form input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  #login_form .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-  }
+  padding: 15px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+#login_form input[type=text]:focus, #login_form input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+#login_form .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
 
 
-  #user_drawings_show_page{
-    margin: auto;
-    margin-top: 10%;
-    display: block;
-    height: auto;
-    width: 60%;
-    text-align: center;
-    background: rgba(245,247,212, 0.521); 
-    padding: 14px 20px; 
-    -webkit-border-radius: 4px; 
-    -moz-border-radius: 4px; 
-    border-radius: 4px;
-    border: black solid 2px;
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+#user_drawings_show_page{
+  margin: auto;
+  margin-top: 10%;
+  display: block;
+  height: auto;
+  width: 60%;
+  text-align: center;
+  background: rgba(245,247,212, 0.521); 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  border: black solid 2px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+
+#all_users_published_drawings_container{
+  margin: auto;
+  margin-top: 5%;
+  display: block;
+  height: auto;
+  width: 75%;
+  text-align: center;
+  background: rgba(245, 247, 212, 0.76); 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  border: black solid 2px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.all_published_drawings{
+  display: flex;
+  flex-direction: column-reverse; /*This will display first drawing at the top */
+}
+
+.drawing_card{
+  border: blue 3px solid;
+  border-radius: 5%;
+  margin-top: 20px;
+}
+
+
+img.publishedPics{
+  float: left;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  margin-right: 3%;
+  height: 500px!important;
+  width: 600px!important;
+  background-color: azure;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+div.published_image_content{
+  padding-right: 2%;
+  padding-left: 2%;
+  border: black 2px solid;
+  border-radius: 12%;
+  float: right;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+div.published_image_comments{
+  text-align: left;
+
 }

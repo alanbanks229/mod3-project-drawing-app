@@ -31,17 +31,28 @@ class UsersController < ApplicationController
   end
 
   def create
+    input_length = params[:username].length
+    user_exists = User.find_by(username: params[:username])
     user = User.new(username: params[:username], password: params[:password])
-    #byebug
+
     if user.valid?
       user.save
       session[:user_id] = user.id
       render json: user #sending this information to frontend
     else
-      render json: {
-        message: "This username is already Taken", status: 220}
+        if (user_exists)
+          render json: {
+            message: "This username is already Taken", status: 220}
+        elsif (input_length == 0)
+          render json: {
+            message: "please input atleast 1 character in username textfield", status: 220
+          }
+        else
+          render json: {
+            message: "something is wrong with your input try again", status: 220
+          }
+        end
     end
-    #end
   end
 
   def destroy

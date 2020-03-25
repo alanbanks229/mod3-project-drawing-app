@@ -20,16 +20,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     let logoutBtns = document.querySelectorAll('.logout_button')
     logoutBtns.forEach(btn => btn.addEventListener('click', clearSession))
-    let postBtns = document.querySelectorAll('.post_button')
-    postBtns.forEach(btn => btn.addEventListener('click', allDrawingsPage))
+    let publishedBtns = document.querySelectorAll('.post_button')
+    publishedBtns.forEach(btn => btn.addEventListener('click', fetchAllDrawings))
     let aboutBtns = document.querySelectorAll('.about_button')
     aboutBtns.forEach(btn => btn.addEventListener('click', fetchAboutPage))
     let signUpBtn = document.querySelectorAll(".sign_up_button")[0]
     signUpBtn.addEventListener('click', signUpPage)
     let userDrawingBtns = document.querySelectorAll('.user_drawings_button')[0]
     userDrawingBtns.addEventListener('click', userShowPage )
+    let submitBtn = document.getElementById('create_new_drawing')
+    submitBtn.addEventListener('submit', (event) => processImage(event))
+
+    console.log("WTF?")
+
+
     fetchAboutPage()
     window.onload = function() {
+        console.log("working")
         Particles.init({
             selector: '.background',
           color: ['#1258DC', '#FB8604'],
@@ -46,6 +53,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }
 })
  
+function processImage(e){
+  e.preventDefault()
+  let canvas = document.getElementById('imageView')
+  let imgData = canvas.toDataURL();
+  document.getElementById('theImageData').value=imgData;
+  save_or_publish(e, imgData)
+}
+
 function clearSession(){
     sessionStorage.clear()
     fetchAboutPage()
@@ -64,10 +79,13 @@ function fetchAboutPage(){
 
 function userLoginPage(){
     document.getElementById('login_form').reset()
+    let i = 0
     acquireAllPages().forEach(page => {
         if (page.id === "login_page_container"){
             page.style.display = "block";
             console.log("login page")
+            console.log(`We went into userLoginPage() call ${i} times`)
+            i = i + 1
         } else {
             document.getElementById(`${page.id}`).style.display = "none";
         }
@@ -80,7 +98,7 @@ function signUpPage(){
     acquireAllPages().forEach(page => {
         if (page.id === "create_user_form_container"){
             page.style.display = "block";
-            console.log("about page")
+            console.log("sign up page")
         } else {
             document.getElementById(`${page.id}`).style.display = "none";
         }
@@ -132,7 +150,6 @@ function validateUserCreation(e){
     .then(respJson => {
         if (respJson.status === 220){
             alert(respJson.message)
-            signUpPage()
         } else {
             return createSession(respJson)
         }
@@ -147,53 +164,115 @@ function createSession(new_user){
         sessionStorage.setItem("id", new_user.id)
         sessionStorage.setItem("username", new_user.username)
         createNewDrawing()
+        //See where this leads after you complete fetchUserDrawing
     } else {
         sessionStorage.setItem("id", new_user.user_id)
         sessionStorage.setItem("username", new_user.username)
-        userShowPage()
+        debugger
+        fetchUserDrawings()
     }
 }
-function createNewDrawing(){
-    //After creating an account make a pop-up saying You have no drawings yet
-    //Create a new drawing!
-    acquireAllPages().forEach(page => {
-        if (page.id === "user_new_drawing_container"){
-            page.style.display = "block";
-            console.log("about page")
-        } else {
-            document.getElementById(`${page.id}`).style.display = "none";
-        }
-    })
-    //targetting event listener here
-    let div_container = document.getElementById('user_new_drawing_container')
-    let greetingHeader = document.getElementById('username_drawpage_h1')
-    greetingHeader.innerHTML = ""
-    greetingHeader.innerText = `Welcome ${sessionStorage.getItem("username")}!`
-    
-    //Let's get newbie paragraph to show up if user's drawings.length === 0
-    // let newbie_paragraph = document.createElement('p')
-    // newbie_paragraph.innerText = "Let's get you started off by creating a drawing\n You can choose either to publish it now or save it to work on for later!"
-    // div_container.append(greetingHeader, newbie_paragraph)
-    
-    let submitBtn = document.getElementById('create_new_drawing')
-    submitBtn.addEventListener('submit', (event) => save_or_publish(event))
+
+//Before calling this function... you have to call fetchUserDrawings
+function userShowPage(user_images){
+  acquireAllPages().forEach(page => {
+      if (page.id === "user_drawings_show_page"){
+              page.style.display = "block";
+              console.log("Now on the users_show_page")
+      } else {
+              document.getElementById(`${page.id}`).style.display = "none";
+      }
+  })
+
+  let h1 = document.getElementById('username_h1')
+  h1.innerText = `Welcome ${sessionStorage.getItem("username")}. This is your show page`
+  let div_container = document.getElementById('all_user_drawings')
+  div_container.appendChild(user_images)
 }
 
-function save_or_publish(e){
+
+function createNewDrawing(){
+    if (sessionStorage.getItem("id")){
+      acquireAllPages().forEach(page => {
+          if (page.id === "user_new_drawing_container"){
+              page.style.display = "block";
+              console.log("Now On Create Drawing Page")
+          } else {
+              document.getElementById(`${page.id}`).style.display = "none";
+          }
+      })
+      //let div_container = document.getElementById('user_new_drawing_container')
+      let greetingHeader = document.getElementById('username_drawpage_h1')
+      greetingHeader.innerHTML = ""
+      greetingHeader.innerText = `Welcome ${sessionStorage.getItem("username")}!`
+      let draw_canvas = document.getElementById('imageView')
+      let context = draw_canvas.getContext('2d')
+      context.clearRect(0, 0, draw_canvas.width, draw_canvas.height)
+    } else {
+      alert("You must be logged in to use this feature")
+    }
+}
+
+function save_or_publish(e, imgData){
     // After user creates drawing... make a new Fetch call to drawings database
     // after fetch call... 
-    
+    // imgdata is the imageDataURI
+    console.log("inside save_or_publish function")
     e.preventDefault()
-    if (e.currentTarget.querySelector('#publish').checked === false){
-        userShowPage(e)
-        console.log("The User Selected To Save and work on it later")
-    } else {
-        allDrawingsPage(e)
-        console.log("The user selected Publish")
-    }
+    newObj = {}
+    newObj["title"] = e.currentTarget.querySelector('#title_input').value
+    newObj["description"] = e.currentTarget.getElementsByTagName('textarea')[0].value
+    newObj["image"] = imgData
+    newObj["published"] = e.currentTarget.querySelector('#publish').checked //=> either true or false
+    newObj["user_id"] = sessionStorage.getItem("id")
+
+    fetch(DRAWING_URL, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newObj)
+    })
+    .then(resp => resp.json())
+    .then(respJson => {
+      if (respJson.status === 220){
+        alert(respJson.message)
+      } else {
+        console.log(respJson)
+        console.log(`Now we are about to call fetchUserDrawings()`)
+        fetchUserDrawings()
+      }
+    })
 }
 
-function allDrawingsPage(drawing_form){
+function fetchUserDrawings(){
+    console.log("inside fetchUserDrawings()... when this promise completes we call appendUserPicture(json_data)")
+    fetch(`${USERS_URL}/${sessionStorage.id}`)
+        .then(resp => resp.json())
+        .then(json_data => {
+          console.log(json_data)
+          console.log("This must be the part where a duplicate is made... not sure why")
+          appendUserPicture(json_data)
+        })
+}
+
+//return this function and append it to all_user_drawings in showpage
+function appendUserPicture(user_object){
+  console.log(`${user_object.drawings.length} Is the number of drawings this user has` )
+  console.log("We are finally in appendUserPicture(json_data)")
+  let user_img_slides = document.getElementById("user_img_slides")
+  user_img_slides.innerHTML = ""
+  user_object.drawings.forEach( drawing => {
+      let new_img = new Image();
+      new_img.src = drawing.image
+      new_img.className = "mySlides"
+      user_img_slides.append(new_img)
+  })
+  userShowPage(user_img_slides)
+}
+
+
+function allDrawingsPage(div_containing_image_cards){
     acquireAllPages().forEach(page => {
         if (page.id === "all_users_published_drawings_container"){
             page.style.display = "block";
@@ -203,35 +282,66 @@ function allDrawingsPage(drawing_form){
         }
     })
     
-    let drawings_container = document.getElementsByClassName("all_published_drawings")[0]
-    
-}
-
-function userShowPage(){
-
-    acquireAllPages().forEach(page => {
-        if (page.id === "user_drawings_show_page"){
-                page.style.display = "block";
-                console.log("login page")
-        } else {
-                document.getElementById(`${page.id}`).style.display = "none";
-        }
-    })
-
-    let h1 = document.getElementById('username_h1')
-    h1.innerText = `Welcome ${sessionStorage.getItem("username")}. This is your show page`
-    let div_container = document.getElementById('all_user_drawings')
-    //fetchUserDrawings()
-
-}
-function fetchUserDrawings(){
-    debugger
-    //check to see if sessionStorage is still working here
-    //fetch(USERS_URL)
+    let drawings_container = document.getElementById("container_for_all_pub_drawings_plus_content")
+    drawings_container.innerHTML = "" //clearing our drawings page and rebuilding it
+    drawings_container.appendChild(div_containing_image_cards)
 }
 
 function fetchAllDrawings(){
+  fetch(DRAWING_URL)
+    .then(resp => resp.json())
+    .then(drawing_arr => constructPublishedPage(drawing_arr))
+}
 
+function constructPublishedPage(drawing_arr){
+    let parent_div = document.createElement('div')
+    parent_div.className = "all_published_drawings"
+    drawing_arr.forEach(drawing_object => {
+
+      if (drawing_object.published === true){
+
+        let drawing_card = document.createElement('div')
+        drawing_card.className = "drawing_card"
+        let creator_heading = document.createElement('p')
+        creator_heading.innerText = `Created By: ${drawing_object.user.username}`
+
+        drawing_card.appendChild(creator_heading)
+
+        let image_float_left_div = document.createElement('div')
+        image_float_left_div.className = "publish_image_float_left"
+          let img = new Image()
+          img.className = "publishedPics"
+          img.src = drawing_object.image
+          let img_h2_title = document.createElement('h2')
+          img_h2_title.innerText = `Title: ${drawing_object.title}`
+          let p_description = document.createElement('p')
+          p_description.innerText = `Description: ${drawing_object.description}`
+
+          image_float_left_div.append(img, img_h2_title, p_description)
+
+        let published_image_comments = document.createElement('div')
+        published_image_comments.className = "published_image_comments"
+          let commentsHeading = document.createElement('h4')
+          commentsHeading.innerText = "Comments"
+          let ul_comments = document.createElement('ul')
+          ul_comments.className = "commentSection"
+          drawing_object.comments.forEach(comment => {
+            let new_comment_li = document.createElement('li')
+            let bold_element = document.createElement('B')
+            let username_b = document.createTextNode(`${comment.user.username}: `)
+            bold_element.appendChild(username_b)
+            let comment_content = document.createElement('p')
+            comment_content.innerText = `${comment.content}`
+            new_comment_li.append(bold_element, comment_content) //How do I get username here
+            ul_comments.appendChild(new_comment_li)
+          })
+          published_image_comments.append(commentsHeading, ul_comments)
+
+          drawing_card.append(image_float_left_div, published_image_comments)
+          parent_div.append(drawing_card)
+        }
+      allDrawingsPage(parent_div)
+    })
 }
 
 function removeUser(){
@@ -265,71 +375,181 @@ function acquireAllPages(){
 }
 
 /*
- display: none removes the element completely from the document. it doesn't take up any space
-
- to show div again you do
-
- <div id="id_name" style="display:block">
-
-*/
-
-
-//ehhh i should get rid of these as global variable stuff
-
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-
-
-
-
-/*
 ************ DRAWING CODEEEE *************
 */
 
-// function start (e) {
-//   isDrawing = true;
-//   draw(e);
-// }
-
-// function draw ({clientX: x, clientY: y}) {
-//   if (!isDrawing) return;
-//   ctx.lineWidth = stroke_weight.value;
-//   ctx.lineCap = "round";
-//   ctx.strokeStyle = color_picker.value;
-
-//   ctx.lineTo(x, y);
-//   ctx.stroke();
-//   ctx.beginPath();
-//   ctx.moveTo(x, y);
-// }
-
-// function stop () {
-//   isDrawing = false;
-//   ctx.beginPath();
-// }
-
-// function clearCanvas () {
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-// }
-
-// window.addEventListener('resize', resizeCanvas);
-// function resizeCanvas () {
-//   canvas.width = window.innerWidth;
-//   canvas.height = window.innerHeight;
-// }
-// resizeCanvas();
+if(window.addEventListener) {
+	window.addEventListener('load', function () {
+	  var canvas, context, canvaso, contexto;
+	
+	  // The active tool instance.
+	  var tool;
+	  var tool_default = 'pencil';
+	
+	  function init () {
+		// Find the canvas element.
+		canvaso = document.getElementById('imageView');
+		if (!canvaso) {
+		  alert('Error: I cannot find the canvas element!');
+		  return;
+		}
+		if (!canvaso.getContext) {
+		  alert('Error: no canvas.getContext!');
+		  return;
+		}
+		// Get the 2D canvas context.
+		contexto = canvaso.getContext('2d');
+		if (!contexto) {
+		  alert('Error: failed to getContext!');
+		  return;
+		}
+		// Add the temporary canvas.
+		var container = canvaso.parentNode;
+		canvas = document.createElement('canvas');
+		if (!canvas) {
+		  alert('Error: I cannot create a new canvas element!');
+		  return;
+		}
+		canvas.id     = 'imageTemp';
+		canvas.width  = canvaso.width;
+		canvas.height = canvaso.height;
+		container.appendChild(canvas);
+		context = canvas.getContext('2d');
+		// Get the tool select input.
+		var tool_select = document.getElementById('dtool');
+		if (!tool_select) {
+		  alert('Error: failed to get the dtool element!');
+		  return;
+		}
+		tool_select.addEventListener('change', ev_tool_change, false);
+		// Activate the default tool.
+		if (tools[tool_default]) {
+		  tool = new tools[tool_default]();
+		  tool_select.value = tool_default;
+		}
+		// Attach the mousedown, mousemove and mouseup event listeners.
+		canvas.addEventListener('mousedown', ev_canvas, false);
+		canvas.addEventListener('mousemove', ev_canvas, false);
+		canvas.addEventListener('mouseup',   ev_canvas, false);
+	  }
+	  // The general-purpose event handler. This function just determines the mouse 
+	  // position relative to the canvas element.
+	  function ev_canvas (ev) {
+		if (ev.layerX || ev.layerX == 0) { // Firefox
+		  ev._x = ev.layerX;
+		  ev._y = ev.layerY;
+		} else if (ev.offsetX || ev.offsetX == 0) { // Opera
+		  ev._x = ev.offsetX;
+		  ev._y = ev.offsetY;
+		}
+		// Call the event handler of the tool.
+		var func = tool[ev.type];
+		if (func) {
+		  func(ev);
+		}
+	  }
+	  // The event handler for any changes made to the tool selector.
+	  function ev_tool_change (ev) {
+		if (tools[this.value]) {
+		  tool = new tools[this.value]();
+		}
+	  }
+	  // This function draws the #imageTemp canvas on top of #imageView, after which 
+	  // #imageTemp is cleared. This function is called each time when the user 
+	  // completes a drawing operation.
+	  function img_update () {
+			contexto.drawImage(canvas, 0, 0);
+			context.clearRect(0, 0, canvas.width, canvas.height);
+	  }
+	  // This object holds the implementation of each drawing tool.
+	  var tools = {};
+	  // The drawing pencil.
+	  tools.pencil = function () {
+		var tool = this;
+		this.started = false;
+		// This is called when you start holding down the mouse button.
+		// This starts the pencil drawing.
+		this.mousedown = function (ev) {
+			context.beginPath();
+			context.moveTo(ev._x, ev._y);
+			tool.started = true;
+		};
+		// This function is called every time you move the mouse. Obviously, it only 
+		// draws if the tool.started state is set to true (when you are holding down 
+		// the mouse button).
+		this.mousemove = function (ev) {
+		  if (tool.started) {
+			context.lineTo(ev._x, ev._y);
+			context.stroke();
+		  }
+		};
+		// This is called when you release the mouse button.
+		this.mouseup = function (ev) {
+		  if (tool.started) {
+			tool.mousemove(ev);
+			tool.started = false;
+			img_update();
+		  }
+		};
+	  };
+	  // The rectangle tool.
+	  tools.rect = function () {
+		var tool = this;
+		this.started = false;
+		this.mousedown = function (ev) {
+		  tool.started = true;
+		  tool.x0 = ev._x;
+		  tool.y0 = ev._y;
+		};
+		this.mousemove = function (ev) {
+		  if (!tool.started) {
+			return;
+		  }
+		  var x = Math.min(ev._x,  tool.x0),
+			  y = Math.min(ev._y,  tool.y0),
+			  w = Math.abs(ev._x - tool.x0),
+			  h = Math.abs(ev._y - tool.y0);
+		  context.clearRect(0, 0, canvas.width, canvas.height);
+		  if (!w || !h) {
+			return;
+		  }
+		  context.strokeRect(x, y, w, h);
+		};
+		this.mouseup = function (ev) {
+		  if (tool.started) {
+			tool.mousemove(ev);
+			tool.started = false;
+			img_update();
+		  }
+		};
+	  };
+	  // The line tool.
+	  tools.line = function () {
+		var tool = this;
+		this.started = false;
+		this.mousedown = function (ev) {
+		  tool.started = true;
+		  tool.x0 = ev._x;
+		  tool.y0 = ev._y;
+		};
+		this.mousemove = function (ev) {
+		  if (!tool.started) {
+			return;
+		  }
+		  context.clearRect(0, 0, canvas.width, canvas.height);
+		  context.beginPath();
+		  context.moveTo(tool.x0, tool.y0);
+		  context.lineTo(ev._x,   ev._y);
+		  context.stroke();
+		  context.closePath();
+		};
+		this.mouseup = function (ev) {
+		  if (tool.started) {
+			tool.mousemove(ev);
+			tool.started = false;
+			img_update();
+		  }
+		};
+	  };
+	  init();
+	}, false); }
