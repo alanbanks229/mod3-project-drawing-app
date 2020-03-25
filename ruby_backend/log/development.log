@@ -13001,3 +13001,539 @@ Processing by DrawingsController#index as */*
 Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 12522)
 
 
+Started GET "/drawings" for ::1 at 2020-03-25 19:12:33 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.7ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:15:29 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.5ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:15:58 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:16:07 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.5ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:16:22 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (28.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 29.6ms | Allocations: 12522)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:16:44 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:17:39 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.7ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 53ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:18:24 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.5ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:18:47 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.9ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:19:15 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.5ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 12522)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:22:39 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (1.6ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 76ms (Views: 2.2ms | ActiveRecord: 4.0ms | Allocations: 12522)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:23:29 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:23:42 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (1.2ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 12519)
+
+
+Started POST "/comments" for ::1 at 2020-03-25 19:24:04 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"content"=>"There SHould be a bug", "user_id"=>nil, "drawing_id"=>52, "comment"=>{"content"=>"There SHould be a bug", "user_id"=>nil, "drawing_id"=>52}}
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:17:in `create'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2479)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:24:12 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 12522)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:25:51 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.4ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 12519)
+
+
+Started GET "/drawings" for ::1 at 2020-03-25 19:26:29 -0400
+Processing by DrawingsController#index as */*
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings"[0m
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 51]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 52]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 53]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."drawing_id" = $1[0m  [["drawing_id", 54]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/drawings_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 12519)
+
+

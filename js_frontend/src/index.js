@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
               breakpoint: 800,
             options: {
                 color: '#00C9B1',
-                maxParticles: 200,
+                maxParticles: 800,
               connectParticles: false
             }
           }]
@@ -317,7 +317,7 @@ function constructPublishedPage(drawing_arr){
         let ul_count = 0
         let drawing_card = document.createElement('div')
         drawing_card.className = "drawing_card"
-        let creator_heading = document.createElement('p')
+        let creator_heading = document.createElement('h2')
         creator_heading.innerText = `Created By: ${drawing_object.user.username}`
 
         drawing_card.appendChild(creator_heading)
@@ -366,31 +366,35 @@ function constructPublishedPage(drawing_arr){
 }
 
 function makeNewComment(e, publisher_username, ul_id, drawing_object_id){
-  var txt;
-  var input = prompt(`You are commenting on ${publisher_username}'s picture. What would you like to say?\n\n`, "");
-  if (input == null || input == "") {
-    txt = "User cancelled the prompt."
+  if (sessionStorage.getItem("id")){
+    var txt;
+    var input = prompt(`You are commenting on ${publisher_username}'s picture. What would you like to say?\n\n`, "");
+    if (input == null || input == "") {
+      txt = "User cancelled the prompt."
+    } else {
+      txt = input
+    }
+    let new_li = document.createElement('li')
+    let target_ul = document.querySelector("[data-ul-id=\"" + `${ul_id}` + "\"]")
+    new_li.innerText = input
+    debugger
+    target_ul.appendChild(new_li)
+  
+    newObj = {}
+    newObj["content"] = input
+    newObj["user_id"] = sessionStorage.getItem("id")
+    newObj["drawing_id"] = drawing_object_id
+    //adding comment to database
+    fetch(COMMENTS_URL, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newObj)
+    })
   } else {
-    txt = input
+    alert("\n* * * You must be logged in to make a comment!* * *")
   }
-  let new_li = document.createElement('li')
-  let target_ul = document.querySelector("[data-ul-id=\"" + `${ul_id}` + "\"]")
-  new_li.innerText = input
-  debugger
-  target_ul.appendChild(new_li)
-
-  newObj = {}
-  newObj["content"] = input
-  newObj["user_id"] = sessionStorage.getItem("id")
-  newObj["drawing_id"] = drawing_object_id
-  //adding comment to database
-  fetch(COMMENTS_URL, {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(newObj)
-  })
 }
 
 function removeUser(){
