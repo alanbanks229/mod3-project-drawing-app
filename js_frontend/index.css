@@ -27,11 +27,12 @@ h1.about{
   font-size: 54px;
 }
 
-/*
-LOGIN CSS
-*/
 
-/* Add styles to the form container */
+
+
+
+
+
 
 .topnav{
   background-color: #f1f1f1;
@@ -111,8 +112,19 @@ LOGIN CSS
   background-color: white;
 }
 
+#overall_drawing_container {
+  background-color: rgb(255, 255, 255);
+  border: 2px 2px 2px rgba(246,248,201, 0.575);
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  display: inline-block;
+  width: 400px!important;
+  padding: 10px;
+}
+
 /* Full-width input fields */
-#login_form input[type=text], #login_form input[type=password] {
+#login_form input[type=text], #login_form input[type=password], #create_user_form input[type=text], #create_user_form input[type=password] {
   
   padding: 15px;
   margin-top: 5%;
@@ -121,6 +133,17 @@ LOGIN CSS
   background: #f1f1f1;
 }
 
+.drawing_form_content input[type=text]{
+  width: 200px!important;
+  padding: 10px;
+  margin-bottom: 5%;
+  background: #f1f1f1;
+}
+
+.drawing_form_content textarea{
+  width: 400px!important;
+  height: 80px!important;
+}
 /* When the inputs get focus, do something */
 #login_form input[type=text]:focus, #login_form input[type=password]:focus {
   background-color: #ddd;
@@ -128,16 +151,56 @@ LOGIN CSS
 }
 
 /* Set a style for the submit/login button */
-#login_form .btn {
+#login_form input[type=submit], #create_user_form input[type=submit] {
+  border-radius: 10%;
+  font-weight: bold;
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
+  padding: 5px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
+  margin-top: 10px;
   margin-bottom:10px;
   opacity: 0.8;
 }
+
+
+#login_form input[type=submit]:hover, #create_user_form input[type=submit]:hover{
+  background-color: rgba(121, 173, 122, 0.753);
+  color: black;
+}
+
+#create_user_form_container{
+  margin: auto;
+  margin-top: 10%;
+  display: block;
+  height: auto;
+  width: 22%;
+  text-align: center;
+  background: rgba(245,247,212, 0.521); 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  border: black solid 2px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+#create_user_form{
+  background-color: rgba(0, 192, 80, 0.08);
+  border: 2px 2px 2px rgba(246,248,201, 0.575);
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  display: inline-block;
+  max-width: 350px;
+  padding: 10px;
+  background-color: white;
+}
+
 
 
 #user_drawings_show_page{
@@ -159,13 +222,30 @@ LOGIN CSS
 }
 
 
-#all_users_published_drawings_container{
+#all_users_published_drawings_container, #user_new_drawing_container{
   margin: auto;
-  margin-top: 5%;
+  margin-top: 1%;
   display: block;
   height: auto;
   width: 75%;
   text-align: center;
+  background: rgba(245, 247, 212, 0.76); 
+  padding: 14px 20px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  border: black solid 2px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+#user_new_drawing_container{
+  margin: auto;
+  margin-top: 1%;
+  display: block;
+  height: auto;
+  width: 400px;
   background: rgba(245, 247, 212, 0.76); 
   padding: 14px 20px; 
   -webkit-border-radius: 4px; 
@@ -216,4 +296,18 @@ div.published_image_content{
 div.published_image_comments{
   text-align: left;
 
+}
+
+.div_containing_draw_form{
+  border: burlywood 3px;
+  display: inline-block;
+}
+
+div.radio_buttons{
+  float: right;
+}
+
+div.drawing_form_content{
+  float: left;
+  text-align: left!important;
 }

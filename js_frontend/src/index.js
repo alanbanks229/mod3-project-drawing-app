@@ -32,7 +32,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
     pubUserDrawingBtn.addEventListener('click', is_user_logged_in)
     let submitBtn = document.getElementById('create_new_drawing')
     submitBtn.addEventListener('submit', (event) => processImage(event))
-
+    let deleteBtn = document.querySelector('.remove_thy_self')
+    deleteBtn.addEventListener('click', removeUser)
+    let clearBtn = document.getElementById('clear_canvas')
+    clearBtn.addEventListener('click', clearDrawingCanvas)
 
     fetchAboutPage()
     window.onload = function() {
@@ -51,6 +54,12 @@ document.addEventListener("DOMContentLoaded", ()=> {
         })
     }
 })
+
+function clearDrawingCanvas(){
+  let draw_canvas = document.getElementById('imageView')
+  let context = draw_canvas.getContext('2d')
+  context.clearRect(0, 0, draw_canvas.width, draw_canvas.height)
+}
 
 //This method only applies for guest users who look at published page and attempt to view their own non-existent drawings
 function is_user_logged_in(){
@@ -398,10 +407,13 @@ function makeNewComment(e, publisher_username, ul_id, drawing_object_id){
 }
 
 function removeUser(){
-    let userId = sessionStorage("id").value
+  debugger
+    let userId = sessionStorage["id"]
     fetch(`${USERS_URL}/${userId}`, {
         method: "DELETE"
     })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
     fetchAboutPage()
 }
 

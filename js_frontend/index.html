@@ -64,9 +64,11 @@
         <label for="username">Username: </label>
         <input type="text" id="login_username" name="username" placeholder="input username here"><br>
         <label for="password">Password: </label>
-        <input type="text" id="login_password" name="password" placeholder="input password here"><br>
+        <input type="password" id="login_password" name="password" placeholder="input password here"><br>
         <input type="submit" value="Submit">
       </form>
+      <br>
+      <input class="about_button" type="button" value="Cancel">
     </div>
     
     <!-- User's New Drawing Page only accessible if logged in-->
@@ -84,17 +86,11 @@
       
       <br>
       <br>
+      <h3>Create a new drawing!</h3>
       <div class="overall_drawing_container">
-        <!-- <canvas id="drawingCanvas"></canvas>
-        <main>
-          <section class="colors">
+          <!-- <section class="colors">
             <input type="text" class="color-picker" value="#DC143C" />
-          </section>
-          <section class="thickness">
-            <input type="number" class="stroke-weight" value="3" />
-          </section>
-          <button class="clear">X</button>
-        </main> -->
+          </section> -->
         <p>
           <label for="favcolor">Select A Color</label>
           <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
@@ -103,25 +99,32 @@
               <option value="rect">Rectangle</option>
               <option value="pencil">Pencil</option>
           </select>
-          </p>
+          <input type="button" id="clear_canvas" value="clear">
+        </p>
           <div id="containerFORCANVAS">
               <canvas id="imageView" width="400" height="300">
               </canvas>
           </div>
         <br>
+        <div class="div_containing_draw_form">
         <form id="create_new_drawing">
           <input type="hidden" name="imageView" id="theImageData"/>
-          <label for="save">Save</label>
-          <input id="save" type="radio" name="user_choice" checked/>
-          <label for="publish">Publish</label>
-          <input id="publish" type="radio" name="user_choice"/>
-          <br>
-          <label for="title">Title: </label>
-          <input type="text" id="title_input" name="title" placeholder="input title for this drawing"><br>
-          <label for="description">Description: </label><br>
-          <textarea rows="3" cols="50" name="description" form="create_new_drawing" placeholder="Enter this drawing's description here"></textarea>
-          <input type="submit" value="Submit">
+          <div class="radio_buttons">
+            <label for="save">Save</label>
+            <input id="save" type="radio" name="user_choice" checked/>
+            <label for="publish">Publish</label>
+            <input id="publish" type="radio" name="user_choice"/>
+            <br>
+          </div>
+          <div class="drawing_form_content">
+            <label for="title">Title: </label>
+            <input type="text" id="title_input" name="title" placeholder="input title for this drawing"><br>
+            <label for="description">Description: </label><br>
+            <textarea rows="3" cols="50" name="description" form="create_new_drawing" placeholder="Enter this drawing's description here"></textarea>
+            <input type="submit" value="Submit">
+          </div>
         </form>
+        </div>
       </div>
       
     </div>
