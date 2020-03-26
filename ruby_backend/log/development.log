@@ -14836,3 +14836,26 @@ Processing by UsersController#show as */*
 Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2703)
 
 
+Started POST "/sessions" for ::1 at 2020-03-26 10:44:40 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Alan", "password"=>"[FILTERED]", "session"=>{"username"=>"Alan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 292ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 1280)
+
+
+Started GET "/users/69" for ::1 at 2020-03-26 10:44:40 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"69"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  [1m[36mDrawing Load (0.3ms)[0m  [1m[34mSELECT "drawings".* FROM "drawings" WHERE "drawings"."user_id" = $1[0m  [["user_id", 69]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 69]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2700)
+
+

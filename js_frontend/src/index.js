@@ -444,6 +444,7 @@ function acquireAllPages(){
 
 if(window.addEventListener) {
 	window.addEventListener('load', function () {
+    let colorInput = document.getElementById('favcolor')
 	  var canvas, context, canvaso, contexto;
 	
 	  // The active tool instance.
@@ -543,7 +544,8 @@ if(window.addEventListener) {
 		// the mouse button).
 		this.mousemove = function (ev) {
 		  if (tool.started) {
-			context.lineTo(ev._x, ev._y);
+      context.lineTo(ev._x, ev._y);
+      context.strokeStyle = colorInput.value
 			context.stroke();
 		  }
 		};
@@ -576,7 +578,8 @@ if(window.addEventListener) {
 		  context.clearRect(0, 0, canvas.width, canvas.height);
 		  if (!w || !h) {
 			return;
-		  }
+      }
+      context.strokeStyle = colorInput.value
 		  context.strokeRect(x, y, w, h);
 		};
 		this.mouseup = function (ev) {
@@ -603,7 +606,8 @@ if(window.addEventListener) {
 		  context.clearRect(0, 0, canvas.width, canvas.height);
 		  context.beginPath();
 		  context.moveTo(tool.x0, tool.y0);
-		  context.lineTo(ev._x,   ev._y);
+      context.lineTo(ev._x,   ev._y);
+      context.strokeStyle = colorInput.value
 		  context.stroke();
 		  context.closePath();
 		};
